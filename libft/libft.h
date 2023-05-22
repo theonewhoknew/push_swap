@@ -6,7 +6,7 @@
 /*   By: theonewhoknew <theonewhoknew@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/09 09:35:45 by dtome-pe          #+#    #+#             */
-/*   Updated: 2023/05/15 23:22:00 by theonewhokn      ###   ########.fr       */
+/*   Updated: 2023/05/22 12:42:28 by theonewhokn      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,14 @@ typedef struct s_list
 	void			*content;
 	struct s_list	*next;
 }		t_list;
+
+typedef struct s_double_list
+{
+	void			*content;
+	struct s_double_list	*next;
+	struct s_double_list	*prev;
+}		t_dlist;
+
 /* 
 libc
 */
@@ -57,9 +65,13 @@ char		*ft_itoa(int n);
 char		*ft_strmapi(char const *s, char (*f) (unsigned int, char));
 void		ft_striteri(char *s, void (*f)(unsigned int, char *));
 size_t		ft_putchar(char c);
+void		ft_putchar_fd(char c, int fd);
 size_t		ft_putstr(char *s);
+void		ft_putstr_fd(char *s, int fd);
 void		ft_putendl(char *s);
+void		ft_putendl_fd(char *s, int fd);
 size_t		ft_putnbr(int n);
+void		ft_putnbr_fd(int n, int fd);
 /*lists - bonus*/
 t_list		*ft_lstnew(void *content);
 void		ft_lstadd_front(t_list **lst, t_list *new);
@@ -71,9 +83,13 @@ void		ft_lstclear(t_list **lst, void (*del)(void *));
 void		ft_lstiter(t_list *lst, void (*f)(void *));
 t_list		*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
 
-/*new ones - printf ones*/
+/*new ones*/
 size_t ft_putadd(void *ptr);
 size_t	ft_putunbr(int n);
 size_t	ft_puthexnbr(int n, char *base);
+int	ft_contains_digit(char *str);
+t_dlist	*ft_dlstnew(void *content);
+void	ft_dlstadd_back(t_dlist **head, t_dlist **tail, t_dlist *new);
+t_dlist	*ft_dlstlast(t_dlist *lst);
 
 #endif
