@@ -14,11 +14,11 @@ L_SRCS = $(addprefix $(LIBFT_DIR)/, ft_atoi.c ft_bzero.c ft_calloc.c ft_isalnum.
 		ft_putchar_fd.c ft_putstr_fd.c ft_putendl_fd.c ft_putnbr_fd.c \
 		ft_putadd.c ft_putunbr.c ft_puthexnbr.c ft_lstnew.c ft_lstadd_front.c ft_lstsize.c ft_lstlast.c \
 		ft_lstadd_back.c ft_lstdelone.c ft_lstclear.c ft_lstiter.c ft_dlstnew.c ft_dlstadd_back.c ft_dlstlast.c\
-		ft_lstmap.c ft_contains_digit.c)
+		ft_lstmap.c ft_contains_digit.c ft_dlstadd_front.c)
 		
 L_OBJS =  $(L_SRCS:.c=.o)
 
-SRCS = push_swap.c check_argv.c init_stack_a.c
+SRCS = push_swap.c check_argv.c init_stack_a.c create_array.c swap.c push.c
 
 OBJS = $(SRCS:.c=.o)
 

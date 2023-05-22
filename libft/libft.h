@@ -6,7 +6,7 @@
 /*   By: theonewhoknew <theonewhoknew@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/09 09:35:45 by dtome-pe          #+#    #+#             */
-/*   Updated: 2023/05/22 12:42:28 by theonewhokn      ###   ########.fr       */
+/*   Updated: 2023/05/22 18:25:49 by theonewhokn      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,5 +91,6 @@ int	ft_contains_digit(char *str);
 t_dlist	*ft_dlstnew(void *content);
 void	ft_dlstadd_back(t_dlist **head, t_dlist **tail, t_dlist *new);
 t_dlist	*ft_dlstlast(t_dlist *lst);
+void	ft_dlstadd_front(t_dlist **lst, t_dlist *new);
 
 #endif
