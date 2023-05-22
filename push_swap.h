@@ -14,5 +14,11 @@ void swap_b(t_dlist *head);
 void swap_s(t_dlist *a, t_dlist *b);
 void push_a(t_dlist **a, t_dlist **b);
 void push_b(t_dlist **a, t_dlist **b);
+void rotate_a(t_dlist **a);
+void rotate_b(t_dlist **b);
+void rotate_r(t_dlist **a, t_dlist **b);
+void reverse_a(t_dlist **a);
+void reverse_b(t_dlist **b);
+void reverse_r(t_dlist **a, t_dlist **b);
 
 #endif

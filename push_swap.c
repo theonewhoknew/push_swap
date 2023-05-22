@@ -40,12 +40,6 @@ int main(int argc, char *argv[])
 		return (1);
 	a = init_stack_a(argc, arr);
 	print_lists(a, b);
-	swap_a(a);
-	print_lists(a, b);
-	push_b(&a, &b);
-	print_lists(a, b);
-	push_a(&a, &b);
-	print_lists(a, b);
 	//free (arr);
 	//free (stack_a);
 	return (0);
