@@ -70,15 +70,15 @@ int empty_a(t_dlist **a, t_dlist **b, int sum, int *n)
 	{	
 		number_removed = (*a)->content;
 		push_b(a, b);
-		print_lists(*a, *b);
+		//print_lists(*a, *b);
 		if (*b != NULL && (*b)->next != NULL)
 		{	
 			if (check_rotate(a, b) != 0)
-				print_lists(*a, *b);
+				//print_lists(*a, *b);
 			if((*b)->next->content > (*b)->content)
 			{
 				swap_b(*b);
-				print_lists(*a, *b);
+				//print_lists(*a, *b);
 			}
 		} 
 		(*n)--;
@@ -87,41 +87,43 @@ int empty_a(t_dlist **a, t_dlist **b, int sum, int *n)
 	else
 	{
 		rotate_a(a);
-		print_lists(*a, *b);
+		//print_lists(*a, *b);
 		return (0);
 	}
 }
 
 void empty_b(t_dlist **a, t_dlist **b)
 {	
-	/* if ((*b)->next != NULL)
+	if ((*b)->next != NULL)
 	{
 		if ((*b)->content > (*b)->next->content)
 		{
 			push_a(a, b);
-			print_lists(*a, *b);
+			//print_lists(*a, *b);
 		}
 		else
 		{	
 			swap_b(*b);
-			print_lists(*a, *b);
+			//print_lists(*a, *b);
+			push_a(a, b);
+			//print_lists(*a, *b);
 		}
 	}
 	else
-	{ */
+	{
 		push_a(a, b);
-		print_lists(*a, *b);			
+		//print_lists(*a, *b);
+	}			
 } 
 
-void sort_stack(t_dlist *a, t_dlist *b, int *arr, int argc)
+void sort_stack(t_dlist *a, t_dlist *b, int *arr, int n)
 {	
 	int sum;
-	int n;
 
-	n = argc - 1;
-	sort_array(arr, argc);
+	sort_array(arr, n);
 	sum = sum_array(arr, n);
-	print_lists(a, b);
+	//printf("sum is %d\n n is %d\n", sum, n);
+	//print_lists(a, b);
 	while (a != NULL)
 	{	
 		if (is_sorted(&a, &b) == 1)

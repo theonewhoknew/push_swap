@@ -38,10 +38,9 @@ void print_array(int *arr, int n)
 	i = 0;
 	while (i < n)
 	{
-		printf("%d ", arr[i]);
+		printf("%d\n", arr[i]);
 		i++;
 	}
-	printf("\n");
 }
 
 int main(int argc, char *argv[])
@@ -54,10 +53,11 @@ int main(int argc, char *argv[])
 	if (check_argv(argc, argv) == 1)
 		return (1);
 	arr = create_array(argc, argv);
+	//print_array(arr, count_argv(argc, argv));
 	if (!arr)
 		return (1);
 	a = init_stack_a(argc, argv);
-	sort_stack(a, b, arr, argc);
+	sort_stack(a, b, arr, count_argv(argc, argv));
 	//free (arr);
 	//free (stack_a);
 	return (0);

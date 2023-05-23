@@ -43,7 +43,6 @@ int count_argv(int argc, char *argv[])
 		n += count_numbers(argv[i]);
 		i++;
 	}
-	printf("n is %d\n", n);
 	return (n);
 }
 
@@ -82,6 +81,5 @@ int *create_array(int argc, char *argv[])
 		free (strs);
 		i++;
 	}
-	print_array(arr, count_argv(argc, argv));
 	return (arr);
 }
