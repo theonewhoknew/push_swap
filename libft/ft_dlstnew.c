@@ -6,7 +6,7 @@
 /*   By: theonewhoknew <theonewhoknew@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/09 10:12:28 by dtome-pe          #+#    #+#             */
-/*   Updated: 2023/05/22 12:24:32 by theonewhokn      ###   ########.fr       */
+/*   Updated: 2023/05/23 11:14:29 by theonewhokn      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 
-t_dlist	*ft_dlstnew(void *content)
+t_dlist	*ft_dlstnew(int content)
 {
 	t_dlist	*node;
 

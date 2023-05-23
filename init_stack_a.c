@@ -3,7 +3,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-t_dlist *init_stack_a(int argc, int *arr)
+t_dlist *init_stack_a(int argc, char *argv[])
 {	
 	int i;
 	t_dlist *head;
@@ -16,7 +16,7 @@ t_dlist *init_stack_a(int argc, int *arr)
 	j = 0;
 	while (i < argc)
 	{	
-		ft_dlstadd_back(&head, &tail, ft_dlstnew((void *)&arr[j]));
+		ft_dlstadd_back(&head, &tail, ft_dlstnew(ft_atoi(argv[i])));
 		i++;
 		j++;
 	}

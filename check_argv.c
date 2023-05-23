@@ -36,6 +36,25 @@ int check_range(int argc, char *argv[])
 	return (0);
 }
 
+int longest_number(int argc, char *argv[])
+{
+	int longest;
+	int	i;
+	int temp;
+
+	i = 1;
+	temp = 0;
+	longest = 0;
+	while (i < argc)
+	{
+		temp = ft_strlen(argv[i]);
+		if (temp > longest)
+			longest = temp;
+		i++;
+	}
+	return (longest);
+}
+
 int check_duplicates(int argc, char *argv[])
 {
 	int i;
@@ -47,7 +66,7 @@ int check_duplicates(int argc, char *argv[])
 	{
 		while (j < (argc - 1))
 		{
-			if (ft_strncmp(argv[i], argv[j + 1], ft_strlen(argv[i])) == 0)
+			if (ft_strncmp(argv[i], argv[j + 1], longest_number(argc, argv)) == 0)
 			{
 				ft_putstr_fd("Error duplicate\n", 2);
 				return (1);
