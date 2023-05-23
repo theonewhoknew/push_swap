@@ -2,18 +2,18 @@
 #include "push_swap.h"
 #include <stdio.h>
 
-int is_sorted(t_dlist *a, t_dlist *b)
+int is_sorted(t_dlist **a, t_dlist **b)
 {	
 	t_dlist *curr;
 
-	curr = a;
-	while (curr != NULL)
+	curr = *a;
+	while (curr->next != NULL)
 	{
 		if (curr->content > curr->next->content)
 			return (0);
 		curr = curr->next;
 	}
-	if (b != NULL)
+	if (*b != NULL)
 		return (0);
 	else
 		return (1);
@@ -123,7 +123,12 @@ void sort_stack(t_dlist *a, t_dlist *b, int *arr, int argc)
 	sum = sum_array(arr, n);
 	print_lists(a, b);
 	while (a != NULL)
+	{	
+		if (is_sorted(&a, &b) == 1)
+			return ;
 		sum -= empty_a(&a, &b, sum, &n);
+	}
 	while (b != NULL)
 		empty_b(&a, &b);
+	return ;
 }

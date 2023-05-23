@@ -25,7 +25,7 @@ void print_array(int *arr, int argc);
 void print_lists(t_dlist *a, t_dlist *b);
 void sort_array(int *arr, int argc);
 void sort_stack(t_dlist *a, t_dlist *b, int *arr, int argc);
-int is_sorted(t_dlist *a, t_dlist *b);
+int is_sorted(t_dlist **a, t_dlist **b);
 int empty_a(t_dlist **a, t_dlist **b, int sum, int *n);
 
 

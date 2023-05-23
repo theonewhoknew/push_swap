@@ -31,12 +31,12 @@ void print_lists(t_dlist *a, t_dlist *b)
 	}
 }
 
-void print_array(int *arr, int argc)
+void print_array(int *arr, int n)
 {
 	int i;
 
 	i = 0;
-	while (i < (argc - 1))
+	while (i < n)
 	{
 		printf("%d ", arr[i]);
 		i++;
