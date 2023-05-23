@@ -1,4 +1,5 @@
 #include "libft/libft.h"
+#include "push_swap.h"
 #include <stdio.h>
 
 void swap_a(t_dlist *a)

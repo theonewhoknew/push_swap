@@ -1,4 +1,5 @@
 #include "libft/libft.h"
+#include "push_swap.h"
 #include <stdlib.h>
 
 void push_a(t_dlist **a, t_dlist **b)

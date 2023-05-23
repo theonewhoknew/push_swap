@@ -53,7 +53,6 @@ int main(int argc, char *argv[])
 	if (check_argv(argc, argv) == 1)
 		return (1);
 	arr = create_array(argc, argv);
-	//print_array(arr, count_argv(argc, argv));
 	if (!arr)
 		return (1);
 	a = init_stack_a(argc, argv);

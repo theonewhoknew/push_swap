@@ -29,6 +29,7 @@ int is_sorted(t_dlist **a, t_dlist **b);
 int empty_a(t_dlist **a, t_dlist **b, int sum, int *n);
 char **parse_argv(char *argv);
 int count_argv(int argc, char *argv[]);
+void check_swap(t_dlist **a, t_dlist **b);
 
 
 #endif
