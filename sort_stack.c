@@ -67,14 +67,14 @@ void check_rotate(t_dlist **a, t_dlist **b)
 		/* else if ((*b)->content > last_b->content && (*a)->content < last_a->content)
 			reverse_r(a, b) */;
 	}
-	else if (*a != NULL)
+	if (*a != NULL)
 	{
 		/* if ((*a)->content > last_a->content)
 			reverse_a(a); */
 		if ((*a)->content > last_a->content)
 			rotate_a(a);
 	}
-	else if (*b != NULL)
+	if (*b != NULL)
 	{
 		if ((*b)->content < last_b->content)
 			rotate_b(b);
@@ -88,10 +88,7 @@ void empty_b(t_dlist **a, t_dlist **b)
 	if ((*b)->next != NULL)
 	{
 		if ((*b)->content > (*b)->next->content)
-		{	
 			push_a(a, b);
-			//print_lists(*a, *b);
-		}	
 		else
 		{	
 			swap_b(*b);
@@ -125,50 +122,70 @@ void empty_b(t_dlist **a, t_dlist **b)
 	}			
 } 
 
-int empty_a(t_dlist **a, t_dlist **b, int sum, int *n)
+void	empty_a(t_dlist **a, t_dlist **b, int range, int *i)
 {	
-	int number_removed;
-
 	
-	if ((*a)->content <= (sum / *n))
+	if ((*a)->content <= range)
 	{	
-		number_removed = (*a)->content;
 		push_b(a, b);
 		//print_lists(*a, *b);
 		check_rotate(a, b);
-		//print_lists(*a, *b);
+		
 		check_swap(a, b);
+		
+		
 		//print_lists(*a, *b);
-		(*n)--;
-		return (number_removed);
+		//print_lists(*a, *b);
+		(*i)++;
 	}
 	else
-	{
-		rotate_a(a);
-		//print_lists(*a, *b);
-		return (0);
+	{	
+		if ((*a)->content > ft_dlstlast(*a)->content)
+			rotate_a(a);
+		else if ((*a)->content > (*a)->next->content)
+			swap_a(*a);
+		else
+			rotate_a(a);
+		//print_lists(*a, *b)
+	}
+}
+
+void operation_stack_a(t_dlist **a, t_dlist **b, int *arr, int n)
+{	
+	int i;
+	int range;
+
+	range = 0;
+	i = 0;
+	while (*a != NULL)
+	{	
+		range = (sum_array(arr, n) / n) / 2;
+		while (i < check_range(arr, range, n))
+			empty_a(a, b, range, &i);
+		range = (sum_array(arr, n) / n);
+		while (i < check_range(arr, range, n))
+			empty_a(a, b, range, &i);
+		range = (sum_array(arr, n) / n) + (sum_array(arr, n) / n) / 2;
+		while (i < check_range(arr, range, n))
+			empty_a(a, b, range, &i);
+		range = find_highest(arr, n);
+		while (i < check_range(arr, range, n))
+			empty_a(a, b, range, &i);
 	}
 }
 
 void sort_stack(t_dlist *a, t_dlist *b, int *arr, int n)
 {	
-	int sum;
-
 	sort_array(arr, n);
-	sum = sum_array(arr, n);
-	if (n == 3)
+	/* if (n == 3)
 	{	
 		check_swap(&a, &b);
 		check_rotate(&a, &b);
 		if (is_sorted(&a, &b) == 1)
 			return ;
-	}
-	while (a != NULL)
-	{	
-		if (is_sorted(&a, &b) == 1)
-			return ;
-		sum -= empty_a(&a, &b, sum, &n);
-	}
+	}*/
+	operation_stack_a(&a, &b, arr, n);
+	
 	while (b != NULL)
 	{
 		empty_b(&a, &b);

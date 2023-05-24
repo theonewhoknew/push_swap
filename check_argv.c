@@ -19,7 +19,7 @@ int check_digits(int argc, char *argv[])
 	return (0);
 }
 
-int check_range(int argc, char *argv[])
+int check_value_range(int argc, char *argv[])
 {
 	int i;
 	
@@ -85,7 +85,7 @@ int	check_argv(int argc, char *argv[])
 		return (1);
 	if (check_digits(argc, argv) == 1)
 		return (1);
-	if (check_range(argc, argv) == 1)
+	if (check_value_range(argc, argv) == 1)
 		return (1);
 	if (check_duplicates(argc, argv) == 1)
 		return (1);
