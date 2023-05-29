@@ -31,6 +31,17 @@ void print_lists(t_dlist *a, t_dlist *b)
 	}
 }
 
+int get_median(int *arr, int n)
+{
+	if (n % 2 != 0)
+	{
+		n++;
+		return (arr[n / 2 - 1]);
+	}
+	else
+		return ((arr[n / 2 - 1] + arr[n / 2]) / 2);
+}
+
 void print_array(int *arr, int n)
 {
 	int i;
@@ -48,6 +59,8 @@ int main(int argc, char *argv[])
 	t_dlist *a;
 	t_dlist *b;
 	int *arr;
+	int median;
+	int n;
 
 	b = NULL;
 	if (check_argv(argc, argv) == 1)
@@ -56,7 +69,13 @@ int main(int argc, char *argv[])
 	if (!arr)
 		return (1);
 	a = init_stack_a(argc, argv);
-	sort_stack(a, b, arr, count_argv(argc, argv));
+	n = count_argv(argc, argv);
+	printf("n is %d\n", n);
+	sort_array(arr, n);
+	median = get_median(arr, n);
+	printf("median is %d\n", median);
+	print_array(arr, n);
+	sort_stack(a, b, arr, n);
 	//free (arr);
 	//free (stack_a);
 	return (0);

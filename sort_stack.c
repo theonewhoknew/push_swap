@@ -176,7 +176,10 @@ void operation_stack_a(t_dlist **a, t_dlist **b, int *arr, int n)
 
 void sort_stack(t_dlist *a, t_dlist *b, int *arr, int n)
 {	
+	int median;
+
 	sort_array(arr, n);
+	median = get_median(arr, n);
 	/* if (n == 3)
 	{	
 		check_swap(&a, &b);
