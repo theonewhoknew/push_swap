@@ -31,8 +31,9 @@ int count_argv(int argc, char *argv[]);
 void check_swap(t_dlist **a, t_dlist **b);
 int check_range(int *arr, int range, int n);
 int find_highest(int *arr, int n);
-void empty_a (t_dlist **a, t_dlist **b, int range, int *i);
+void empty_a (t_dlist **a, t_dlist **b, int range);
 int get_median(int *arr, int n);
+int *get_array(t_dlist *stack, int n);
 
 
 #endif

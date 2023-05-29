@@ -47,8 +47,9 @@ void print_array(int *arr, int n)
 	int i;
 
 	i = 0;
+	printf("array is:\n");
 	while (i < n)
-	{
+	{	
 		printf("%d\n", arr[i]);
 		i++;
 	}
@@ -70,11 +71,11 @@ int main(int argc, char *argv[])
 		return (1);
 	a = init_stack_a(argc, argv);
 	n = count_argv(argc, argv);
-	printf("n is %d\n", n);
+/* 	printf("n is %d\n", n);
 	sort_array(arr, n);
 	median = get_median(arr, n);
 	printf("median is %d\n", median);
-	print_array(arr, n);
+	print_array(arr, n); */
 	sort_stack(a, b, arr, n);
 	//free (arr);
 	//free (stack_a);
