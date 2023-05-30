@@ -3,7 +3,35 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int is_sorted(t_dlist **a, t_dlist **b)
+int is_sorted_a(t_dlist *stack)
+{	
+	t_dlist *curr;
+
+	curr = stack;
+	while (curr->next != NULL)
+	{
+		if (curr->content > curr->next->content)
+			return (0);
+		curr = curr->next;
+	}
+	return (1);
+}
+
+int is_sorted_b(t_dlist *stack)
+{	
+	t_dlist *curr;
+
+	curr = stack;
+	while (curr->next != NULL)
+	{
+		if (curr->content < curr->next->content)
+			return (0);
+		curr = curr->next;
+	}
+	return (1);
+}
+
+int is_sorted_both(t_dlist **a, t_dlist **b)
 {	
 	t_dlist *curr;
 
@@ -123,54 +151,6 @@ void empty_b(t_dlist **a, t_dlist **b)
 	}			
 } 
 
-/* void	empty_a(t_dlist **a, t_dlist **b, int range)
-{	
-	
-	if ((*a)->content <= range)
-	{	
-		push_b(a, b);
-		//print_lists(*a, *b);
-		check_rotate(a, b);
-		
-		check_swap(a, b);
-		
-	}
-	else
-	{	
-		if ((*a)->content > ft_dlstlast(*a)->content)
-			rotate_a(a);
-		else if ((*a)->content > (*a)->next->content)
-			swap_a(*a);
-		else
-			rotate_a(a);
-		//print_lists(*a, *b)
-	}
-} */
-
-/* void operation_stack_a(t_dlist **a, t_dlist **b, int *arr, int n)
-{	
-	int i;
-	int range;
-
-	range = 0;
-	i = 0;
-	while (*a != NULL)
-	{	
-		range = (sum_array(arr, n) / n) / 2;
-		while (i < check_range(arr, range, n))
-			empty_a(a, b, range, &i);
-		range = (sum_array(arr, n) / n);
-		while (i < check_range(arr, range, n))
-			empty_a(a, b, range, &i);
-		range = (sum_array(arr, n) / n) + (sum_array(arr, n) / n) / 2;
-		while (i < check_range(arr, range, n))
-			empty_a(a, b, range, &i);
-		range = find_highest(arr, n);
-		while (i < check_range(arr, range, n))
-			empty_a(a, b, range, &i);
-	}
-} */
-
 static int	ft_dlstsize(t_dlist *lst)
 {
 	int	c;
@@ -184,40 +164,62 @@ static int	ft_dlstsize(t_dlist *lst)
 	return (c);
 }
 
-void	empty_a(t_dlist **a, t_dlist **b, int range)
+void sort_a(t_dlist **a)
 {	
-	
-	if ((*a)->content <= range)
+	while (is_sorted_a(*a) != 1)
 	{	
-		push_b(a, b);
-		//print_lists(*a, *b);
-		/* check_rotate(a, b);
-		
-		check_swap(a, b); */
-		
-	}
-	else
-	{	
-	/* 	if ((*a)->content > ft_dlstlast(*a)->content)
+		if ((*a)->content > (*a)->next->content && (*a)->content > ft_dlstlast(*a)->content)
 			rotate_a(a);
 		else if ((*a)->content > (*a)->next->content)
 			swap_a(*a);
-		else */
+		else if (ft_dlstlast(*a)->content < (*a)->content)
+			reverse_a(a);
+		
+		else if ((*a)->next->content > (*a)->next->next->content)
+		{
+			swap_a(*a);
 			rotate_a(a);
-		//print_lists(*a, *b)
-	}
+			return ;
+		}
+		else if ((*a)->content > (*a)->next->content)
+			rotate_a(a);
+	}	
+}
+void sort_b(t_dlist **b)
+{	
+	if (is_sorted_a(*b) != 1)
+	{	
+		if (ft_dlstlast(*b)->content > (*b)->content)
+			reverse_a(b);
+		if ((*b)->content > (*b)->next->content)
+			rotate_a(b);
+		else if ((*b)->next->content < (*b)->next->next->content)
+		{
+			swap_a(*b);
+			rotate_a(b);
+			return ;
+		}
+		if ((*b)->content < (*b)->next->content)
+			swap_a(*b);
+		if ((*b)->content < (*b)->next->content)
+			rotate_a(b);
+	}	
+	else
+		return ;
 }
 
- void operation_stack_a(t_dlist **a, t_dlist **b, int n)
+
+void quicksort_a(t_dlist **a, t_dlist **b, int n)
 {	
 	int median;
 	int i;
-	int range;
 	int *arr;
+	int c;
 	
+	if (ft_dlstsize(*a) <= 3)
+		return ;
+	c = 0;		
 	arr = NULL;
-	n = ft_dlstsize(*a);
-	printf("n is %d\n", n);
 	if (arr != NULL)
 	{
 		free (arr);
@@ -225,30 +227,72 @@ void	empty_a(t_dlist **a, t_dlist **b, int range)
 	}
 	arr = get_array(*a, n);
 	sort_array(arr, n);
-	print_array(arr, n);
 	median = get_median(arr, n);
-	printf("median is %d\n", median);
-	empty_a(a, b, median);
-	print_lists(*a, *b);
+	i = 0;
+	while (i < n)
+	{	
+		if (ft_dlstsize(*a) <= 3)
+			return ;
+		if ((*a)->content < median)
+		{	
+			push_b(a, b);
+			//check_swap(a, b);
+			//check_rotate(a, b);
+			c++;
+		}
+		else
+			rotate_a(a);
+		i++;
+		//print_lists(*a, *b);		
+	}
+	quicksort_a(a, b, ft_dlstsize(*a) / 2);
+	//quicksort_b(a, b, c / 2);	 
+}
+
+void quicksort_b(t_dlist **a, t_dlist **b, int n)
+{	
+	int median;
+	int i;
+	int *arr;
+	int c;
+
+	arr = NULL;
+	if (arr != NULL)
+	{
+		free (arr);
+		arr = NULL;
+	}
+	arr = get_array(*b, n);
+	sort_array(arr, n);
+	median = get_median(arr, n);
+	i = 0;
+	c = 0;
+	while (i < n)
+	{	
+		if (is_sorted_b(*b) == 1)
+		{	
+			while (ft_dlstsize(*b) > 0)
+				push_a(a, b);
+			return ;
+		}
+		if ((*b)->content > median)
+		{
+			push_a(a, b);
+			//check_swap(a, b);
+			c++;
+		}
+		else
+			rotate_b(b);
+		i++;	
+	}
+	quicksort_a(a, b, c / 2);
+	quicksort_b(a, b, ft_dlstsize(*b) / 2);
 }
 
 void sort_stack(t_dlist *a, t_dlist *b, int *arr, int n)
 {	
-	
-	/* if (n == 3)
-	{	
-		check_swap(&a, &b);
-		check_rotate(&a, &b);
-		if (is_sorted(&a, &b) == 1)
-			return ;
-	}*/
-	while (ft_dlstsize(a) > 3)
-		operation_stack_a(&a, &b, n);
-	
-	/* 
-	while (b != NULL)
-	{
-		empty_b(&a, &b);
-	} */
+	quicksort_a(&a, &b, ft_dlstsize(a));
+	sort_a(&a);
+	quicksort_b(&a, &b, ft_dlstsize(b));
 	return ;
 }

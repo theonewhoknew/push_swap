@@ -25,7 +25,8 @@ void print_array(int *arr, int argc);
 void print_lists(t_dlist *a, t_dlist *b);
 void sort_array(int *arr, int argc);
 void sort_stack(t_dlist *a, t_dlist *b, int *arr, int n);
-int is_sorted(t_dlist **a, t_dlist **b);
+int is_sorted(t_dlist *stack);
+int is_sorted_both(t_dlist **a, t_dlist **b);
 char **parse_argv(char *argv);
 int count_argv(int argc, char *argv[]);
 void check_swap(t_dlist **a, t_dlist **b);
@@ -34,6 +35,8 @@ int find_highest(int *arr, int n);
 void empty_a (t_dlist **a, t_dlist **b, int range);
 int get_median(int *arr, int n);
 int *get_array(t_dlist *stack, int n);
+void quicksort_a(t_dlist **a, t_dlist **b, int n);
+void quicksort_b(t_dlist **a, t_dlist **b, int n);
 
 
 #endif
