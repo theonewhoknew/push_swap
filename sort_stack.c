@@ -3,12 +3,27 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int is_sorted_a(t_dlist *stack)
+static int	ft_dlstsize(t_dlist *lst)
+{
+	int	c;
+
+	c = 0;
+	while (lst != NULL)
+	{
+		c++;
+		lst = lst->next;
+	}
+	return (c);
+}
+
+
+int is_sorted_a(t_dlist *stack, int p)
 {	
 	t_dlist *curr;
 
 	curr = stack;
-	while (curr->next != NULL)
+	//printf("p is %d\n", p);
+	while (curr->content != p)
 	{
 		if (curr->content > curr->next->content)
 			return (0);
@@ -42,25 +57,10 @@ int is_sorted_both(t_dlist **a, t_dlist **b)
 			return (0);
 		curr = curr->next;
 	}
-	if (*b != NULL)
+	if (ft_dlstsize(*b) != 0)
 		return (0);
 	else
 		return (1);
-}
-
-long sum_array(int *arr, int n)
-{
-	int i;
-	long total;
-
-	i = 0;
-	total = 0;
-	while (i < (n))
-	{
-		total += arr[i];
-		i++;
-	}
-	return (total);
 }
 
 void check_swap(t_dlist **a, t_dlist **b)
@@ -112,82 +112,35 @@ void check_rotate(t_dlist **a, t_dlist **b)
 	}
 }	
 
-void empty_b(t_dlist **a, t_dlist **b)
+void sort_a(t_dlist **a, int p)
 {	
-	if ((*b)->next != NULL)
+
+	if ((*a)->content > (*a)->next->content && (*a)->next->content > (*a)->next->next->content)
 	{
-		if ((*b)->content > (*b)->next->content)
-			push_a(a, b);
-		else
-		{	
-			swap_b(*b);
-			//print_lists(*a, *b);
-			check_swap(a, b);
-			//print_lists(*a, *b);
-			push_a(a, b);
-			//print_lists(*a, *b);
-		}
-		if ((*a)->next != NULL)
-		{
-			if ((*a)->content > (*a)->next->content)
-			{	
-				check_swap(a, b);
-			//	print_lists(*a, *b);
-			}	
-		}
+		swap_a(*a);
+		rotate_a(a);
+		swap_a(*a);
+		reverse_a(a);
+		swap_a(*a);
 	}
-	else
-	{	
-		push_a(a, b);
-		//print_lists(*a, *b);
-		if ((*a)->next != NULL)
-		{
-			if ((*a)->content > (*a)->next->content)
-			{	
-				swap_a(*a);
-		//		print_lists(*a, *b);
-			}	
-		}
-	}			
-} 
-
-static int	ft_dlstsize(t_dlist *lst)
-{
-	int	c;
-
-	c = 0;
-	while (lst != NULL)
-	{
-		c++;
-		lst = lst->next;
-	}
-	return (c);
-}
-
-void sort_a(t_dlist **a)
-{	
-	while (is_sorted_a(*a) != 1)
-	{	
-		if ((*a)->content > (*a)->next->content && (*a)->content > ft_dlstlast(*a)->content)
-			rotate_a(a);
-		else if ((*a)->content > (*a)->next->content)
-			swap_a(*a);
-		else if (ft_dlstlast(*a)->content < (*a)->content)
-			reverse_a(a);
+	else if ((*a)->content > (*a)->next->content)
+		swap_a(*a);
+	else if (ft_dlstlast(*a)->content < (*a)->content)
+		reverse_a(a);
 		
-		else if ((*a)->next->content > (*a)->next->next->content)
-		{
-			swap_a(*a);
-			rotate_a(a);
-			return ;
-		}
-		else if ((*a)->content > (*a)->next->content)
-			rotate_a(a);
-	}	
+	else if ((*a)->next->content > (*a)->next->next->content)
+	{
+		swap_a(*a);
+		rotate_a(a);
+		return ;
+	}
+	else if ((*a)->content > (*a)->next->content)
+		rotate_a(a);
+		
 }
-void sort_b(t_dlist **b)
+void sort_b(t_dlist **b, int p)
 {	
-	if (is_sorted_a(*b) != 1)
+	if (is_sorted_a(*b, p) != 1)
 	{	
 		if (ft_dlstlast(*b)->content > (*b)->content)
 			reverse_a(b);
@@ -208,14 +161,47 @@ void sort_b(t_dlist **b)
 		return ;
 }
 
+int get_number_partition_a(t_stack *stack, t_dlist *list)
+{
+	int c;
 
-void quicksort_a(t_dlist **a, t_dlist **b, int n)
+	c = 1;
+	while (list->content != stack->a_p[(stack->a_n) - 1])
+	{
+		list = list->next;
+		c++;
+	}
+	stack->a_n--;
+	return (c);
+}
+
+int get_number_partition_b(t_stack *stack, t_dlist *list)
+{
+	int c;
+
+	c = 1;
+	if (stack->b_n == 0)
+	 	return (ft_dlstlast(list)->content);
+	printf("number of partition is %d\n", stack->b_p[(stack->b_n) - 1]);
+	while (list->content != stack->b_p[(stack->b_n) - 1])
+	{
+		list = list->next;
+		c++;
+	}
+	stack->b_n--;
+	return (c);
+}
+
+void quicksort_a(t_dlist **a, t_dlist **b, int n, t_stack *stack)
 {	
 	int median;
 	int i;
 	int *arr;
 	int c;
+	static int j;
+	int partition_set;
 	
+	partition_set = 0;
 	if (ft_dlstsize(*a) <= 3)
 		return ;
 	c = 0;		
@@ -232,30 +218,101 @@ void quicksort_a(t_dlist **a, t_dlist **b, int n)
 	while (i < n)
 	{	
 		if (ft_dlstsize(*a) <= 3)
-			return ;
-		if ((*a)->content < median)
-		{	
+			break ;
+		if ((*a)->content <= median)
+		{
 			push_b(a, b);
-			//check_swap(a, b);
-			//check_rotate(a, b);
-			c++;
+			if (!partition_set)
+			{	
+				stack->b_n++;
+				stack->b_p[(stack->b_n) - 1] = (*b)->content;
+				partition_set = 1;
+				//printf("partition nº %d made up to number %d\n", stack->b_n, stack->b_p[(stack->b_n) - 1]);
+			}
 		}
 		else
 			rotate_a(a);
 		i++;
 		//print_lists(*a, *b);		
 	}
-	quicksort_a(a, b, ft_dlstsize(*a) / 2);
-	//quicksort_b(a, b, c / 2);	 
+	j++;
+	print_lists(*a, *b);
+	quicksort_a(a, b, ft_dlstsize(*a), stack);
 }
 
-void quicksort_b(t_dlist **a, t_dlist **b, int n)
+void quicksort_after_a(t_dlist **a, t_dlist **b, int n, t_stack *stack)
 {	
 	int median;
 	int i;
 	int *arr;
 	int c;
+	int rot;
+	int partition_set;
+	
+	partition_set = 0;
+	rot = 0;
+	if (ft_dlstsize(*a) <= 3)
+		return ;
+	c = 0;		
+	arr = NULL;
+	if (arr != NULL)
+	{
+		free (arr);
+		arr = NULL;
+	}
+	arr = get_array(*a, n);
+	sort_array(arr, n);
+	median = get_median(arr, n);
+	i = 0;
+	while (i < n)
+	{	
+		if (ft_dlstsize(*a) <= 3)
+			break ;
+		if ((*a)->content <= median)
+		{
+			push_b(a, b);
+			if (!partition_set)
+			{	
+				stack->b_n++;
+				stack->b_p[(stack->b_n) - 1] = (*b)->content;
+				partition_set = 1;
+				//printf("partition nº %d made up to number %d\n", stack->b_n, stack->b_p[(stack->b_n) - 1]);
+			}
+		}
+		else
+		{
+			rotate_a(a);
+			rot++;
+		}
+		i++;
+		//print_lists(*a, *b);		
+	}
+	while (rot)
+	{
+		reverse_a(a);
+		rot--;
+	}
+	print_lists(*a, *b);
+	quicksort_after_a(a, b, get_number_partition_a(stack, *a), stack);
+}
 
+void quicksort_b(t_dlist **a, t_dlist **b, int n, t_stack *stack)
+{	
+	int median;
+	int i;
+	int *arr;
+	int c;
+	int partition_set;
+	static int j;
+
+	if (ft_dlstsize(*b) <= 3)
+	{	
+		sort_b(b, stack->b_p[(stack->b_n) - 1]);
+		while (*b != NULL)
+			push_a(a, b);
+		return ;
+	}
+	partition_set = 0;
 	arr = NULL;
 	if (arr != NULL)
 	{
@@ -269,30 +326,55 @@ void quicksort_b(t_dlist **a, t_dlist **b, int n)
 	c = 0;
 	while (i < n)
 	{	
-		if (is_sorted_b(*b) == 1)
+		if ((*b)->content >= median)
 		{	
-			while (ft_dlstsize(*b) > 0)
-				push_a(a, b);
-			return ;
-		}
-		if ((*b)->content > median)
-		{
 			push_a(a, b);
-			//check_swap(a, b);
 			c++;
+			if (!partition_set)
+			{	
+				stack->a_n++;
+				stack->a_p[(stack->a_n) - 1] = (*a)->content;
+				partition_set = 1;
+			}
 		}
 		else
 			rotate_b(b);
 		i++;	
 	}
-	quicksort_a(a, b, c / 2);
-	quicksort_b(a, b, ft_dlstsize(*b) / 2);
+	print_lists(*a, *b);
+	if (c <= 3)
+	{	
+		/* printf("number of partitions in a is %d\n", stack->a_n);
+		printf("is sorted until %d\n",stack->a_p[(stack->a_n) - 1]); */
+		sort_a(a, stack->a_p[(stack->a_n) - 1]);
+	}
+	else if (c > 3)
+	{	
+		/* printf("entra aqui\n");
+		printf("first partition up to: %d\n second partition up to :%d\n number of partitions:%d\n", stack->a_p[0], stack->a_p[1], stack->a_n); */
+		//printf("number partition%d\n partition up to %d", stack->a_n, stack->a_p[(stack->a_n) - 1]);
+		quicksort_after_a(a, b, get_number_partition_a(stack, *a), stack);
+	}
+
 }
 
 void sort_stack(t_dlist *a, t_dlist *b, int *arr, int n)
 {	
-	quicksort_a(&a, &b, ft_dlstsize(a));
-	sort_a(&a);
-	quicksort_b(&a, &b, ft_dlstsize(b));
+	t_stack stack;
+
+	stack.a_n = 0;
+	stack.b_n = 0;
+	quicksort_a(&a, &b, ft_dlstsize(a), &stack);
+	sort_a(&a, ft_dlstlast(a)->content);
+	printf(" number of partitions:%d\n", stack.b_n);
+	print_lists(a, b);
+	quicksort_b(&a, &b, get_number_partition_b(&stack, b), &stack); 
+	print_lists(a, b);
+	quicksort_b(&a, &b, get_number_partition_b(&stack, b), &stack); 
+	//print_lists(a, b);
+	/*printf(" number of partitions:%d\n", stack.b_n);
+	quicksort_b(&a, &b, get_number_partition_b(&stack, b), &stack); 
+	print_lists(a, b);  */
+	
 	return ;
 }

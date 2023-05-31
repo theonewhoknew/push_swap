@@ -32,7 +32,7 @@ void print_lists(t_dlist *a, t_dlist *b)
 }
 
 int get_median(int *arr, int n)
-{
+{	
 	if (n % 2 != 0)
 	{
 		n++;

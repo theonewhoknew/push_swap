@@ -57,3 +57,18 @@ int find_highest(int *arr, int n)
 	}
 	return (highest);
 }
+
+long sum_array(int *arr, int n)
+{
+	int i;
+	long total;
+
+	i = 0;
+	total = 0;
+	while (i < (n))
+	{
+		total += arr[i];
+		i++;
+	}
+	return (total);
+}

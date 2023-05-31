@@ -3,11 +3,20 @@
 
 # include "libft/libft.h"
 
+typedef struct s_stack
+{
+	int a_p[20];
+	int b_p[20];
+	int a_n;
+	int b_n;
+}				t_stack;
+
 int check_value_range(int argc, char *argv[]);
 int check_digits(int argc, char *argv[]);
 int	check_argv(int argc, char *argv[]);
 int check_duplicates(int argc, char *argv[]);
 int *create_array(int argc, char *argv[]);
+long sum_array(int *arr, int n);
 t_dlist *init_stack_a(int argc, char *argv[]);
 void swap_a(t_dlist *head);
 void swap_b(t_dlist *head);
@@ -35,8 +44,8 @@ int find_highest(int *arr, int n);
 void empty_a (t_dlist **a, t_dlist **b, int range);
 int get_median(int *arr, int n);
 int *get_array(t_dlist *stack, int n);
-void quicksort_a(t_dlist **a, t_dlist **b, int n);
-void quicksort_b(t_dlist **a, t_dlist **b, int n);
+void quicksort_a(t_dlist **a, t_dlist **b, int n, t_stack *stack_b);
+void quicksort_b(t_dlist **a, t_dlist **b, int n, t_stack *stack_a);
 
 
 #endif
