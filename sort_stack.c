@@ -144,6 +144,12 @@ void sort_a(t_dlist **a, int elements)
 		swap_a(*a);
 		reverse_a(a);
 	}
+	else if ((*a)->content < (*a)->next->content && (*a)->next->content > (*a)->next->next->content)
+	{
+		rotate_a(a);
+		swap_a(*a);
+		reverse_a(a);
+	}
 	else if ((*a)->content > (*a)->next->content)
 		swap_a(*a);
 	else if (ft_dlstlast(*a)->content < (*a)->content)
@@ -211,7 +217,7 @@ int get_number_partition_b(t_stack *stack, t_dlist *list)
 	return (c);
 }
 
-void quicksort_a(t_dlist **a, t_dlist **b, int n, t_stack *stack)
+void first_sort(t_dlist **a, t_dlist **b, int n, t_stack *stack)
 {	
 	int median;
 	int i;
@@ -255,7 +261,7 @@ void quicksort_a(t_dlist **a, t_dlist **b, int n, t_stack *stack)
 		//print_lists(*a, *b);		
 	}
 	j++;
-	quicksort_a(a, b, ft_dlstsize(*a), stack);
+	first_sort(a, b, ft_dlstsize(*a), stack);
 }
 
 void quicksort_after_a(t_dlist **a, t_dlist **b, int n, t_stack *stack)
@@ -362,7 +368,7 @@ void sort_stack(t_dlist *a, t_dlist *b, int *arr, int n)
 
 	stack.a_n = 0;
 	stack.b_n = 0;
-	quicksort_a(&a, &b, ft_dlstsize(a), &stack);
+	first_sort(&a, &b, ft_dlstsize(a), &stack);
 	sort_a(&a, ft_dlstsize(a));
 	while (is_sorted_both(&a, &b) != 1)
 		quicksort_b(&a, &b, get_number_partition_b(&stack, b), &stack);
