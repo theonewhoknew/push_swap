@@ -19,7 +19,7 @@ L_SRCS = $(addprefix $(LIBFT_DIR)/, ft_atoi.c ft_bzero.c ft_calloc.c ft_isalnum.
 L_OBJS =  $(L_SRCS:.c=.o)
 
 SRCS = push_swap.c check_argv.c init_stack_a.c create_array.c swap.c push.c rotate.c reverse.c aux_array.c \
-		sort_stack.c get_array.c
+		sort_stack.c get_array.c sorted_up_to.c
 
 OBJS = $(SRCS:.c=.o)
 

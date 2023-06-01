@@ -46,6 +46,8 @@ int get_median(int *arr, int n);
 int *get_array(t_dlist *stack, int n);
 void quicksort_a(t_dlist **a, t_dlist **b, int n, t_stack *stack_b);
 void quicksort_b(t_dlist **a, t_dlist **b, int n, t_stack *stack_a);
+int sorted_up_to(t_dlist *a, t_dlist *b);
+int elements_after_sorted(t_dlist *a, int sorted);
 
 
 #endif
