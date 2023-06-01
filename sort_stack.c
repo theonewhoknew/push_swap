@@ -57,10 +57,10 @@ int is_sorted_both(t_dlist **a, t_dlist **b)
 			return (0);
 		curr = curr->next;
 	}
-	if (ft_dlstsize(*b) != 0)
-		return (0);
-	else
+	if (ft_dlstsize(*b) == 0)
 		return (1);
+	else
+		return (0);
 }
 
 void check_swap(t_dlist **a, t_dlist **b)
@@ -124,6 +124,23 @@ void sort_a(t_dlist **a, int elements)
 	}
 	if ((*a)->content > (*a)->next->content && (*a)->next->content > (*a)->next->next->content)
 	{
+		swap_a(*a);
+		rotate_a(a);
+		swap_a(*a);
+		reverse_a(a);
+		swap_a(*a);
+	}
+	else if ((*a)->content < (*a)->next->content && (*a)->content > (*a)->next->next->content)
+	{
+		rotate_a(a);
+		swap_a(*a);
+		reverse_a(a);
+		swap_a(*a);
+	}
+	else if ((*a)->content > (*a)->next->next->content && (*a)->next->content < (*a)->next->next->content)
+	{
+		swap_a(*a);
+		rotate_a(a);
 		swap_a(*a);
 		reverse_a(a);
 	}
@@ -281,8 +298,7 @@ void quicksort_after_a(t_dlist **a, t_dlist **b, int n, t_stack *stack)
 			rotate_a(a);
 			rot++;
 		}
-		i++;
-		print_lists(*a, *b);		
+		i++;		
 	}
 	while (rot)
 	{
@@ -337,7 +353,7 @@ void quicksort_b(t_dlist **a, t_dlist **b, int n, t_stack *stack)
 		partition_set = 1;
 	}
 	else if (c > 3)
-		quicksort_after_a(a, b, get_number_partition_a(stack, *a), stack); 
+		quicksort_after_a(a, b, elements_after_sorted(*a, sorted_up_to(*a, *b)), stack); 
 }
 
 void sort_stack(t_dlist *a, t_dlist *b, int *arr, int n)
@@ -349,10 +365,7 @@ void sort_stack(t_dlist *a, t_dlist *b, int *arr, int n)
 	quicksort_a(&a, &b, ft_dlstsize(a), &stack);
 	sort_a(&a, ft_dlstsize(a));
 	while (is_sorted_both(&a, &b) != 1)
-	{
 		quicksort_b(&a, &b, get_number_partition_b(&stack, b), &stack);
-		print_lists(a, b);
-	}
 	
 	/* printf("sorted up to %d\n", sorted_up_to(a, b));
 	printf("sorted up to %d\n", sorted_up_to(a, b));
