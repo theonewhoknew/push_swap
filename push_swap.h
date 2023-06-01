@@ -41,12 +41,18 @@ int count_argv(int argc, char *argv[]);
 void check_swap(t_dlist **a, t_dlist **b);
 int check_range(int *arr, int range, int n);
 int find_highest(int *arr, int n);
-int get_median(int *arr, int n);
+int get_median(t_dlist *list, int n);
 int *get_array(t_dlist *stack, int n);
 void first_sort(t_dlist **a, t_dlist **b, int n, t_stack *stack_b);
 void quicksort_b(t_dlist **a, t_dlist **b, int n, t_stack *stack_a);
 int sorted_up_to(t_dlist *a, t_dlist *b);
 int elements_after_sorted(t_dlist *a, int sorted);
+void do_3_2_1(t_dlist **a);
+void do_2_3_1(t_dlist **a);
+void do_3_1_2(t_dlist **a);
+void do_1_3_2(t_dlist **a);
+void do_2_1_3(t_dlist **a);
+int	ft_dlstsize(t_dlist *lst);
 
 
 #endif

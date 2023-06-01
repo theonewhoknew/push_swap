@@ -1,31 +1,5 @@
 #include <stdlib.h>
 
-void sort_array(int *arr, int n)
-{
-	int i;
-	int j;
-	int temp;
-
-	i = 0;
-	j = 0;
-	temp = 0;
-	while (i < (n - 1))
-	{
-		while (j < (n - 1))
-		{
-			if (arr[j] > arr[j + 1])
-			{
-				temp = arr[j];
-				arr[j] = arr[j + 1];
-				arr[j + 1] = temp;
-			}
-			j++;
-		}
-		i++;
-		j = 0;
-	}
-}
-
 int check_range(int *arr, int range, int n)
 {
 	int i;
