@@ -53,6 +53,9 @@ void do_3_1_2(t_dlist **a);
 void do_1_3_2(t_dlist **a);
 void do_2_1_3(t_dlist **a);
 int	ft_dlstsize(t_dlist *lst);
-
+int get_partition(t_stack *stack, t_dlist *list);
+void sort_a(t_dlist **a, int elements);
+int operate_a(t_dlist **a, t_dlist **b, int n, t_stack *stack);
+int operate_b(t_dlist **a, t_dlist **b, int n, t_stack *stack);
 
 #endif

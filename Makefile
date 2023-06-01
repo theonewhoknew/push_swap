@@ -18,8 +18,8 @@ L_SRCS = $(addprefix $(LIBFT_DIR)/, ft_atoi.c ft_bzero.c ft_calloc.c ft_isalnum.
 		
 L_OBJS =  $(L_SRCS:.c=.o)
 
-SRCS = push_swap.c check_argv.c init_stack_a.c create_array.c swap.c push.c rotate.c reverse.c aux_array.c \
-		sort_stack.c median.c sorted_up_to.c aux_prints.c sort_comb.c is_sorted.c ft_dlstsize.c
+SRCS = get_partition.c sort_a.c push_swap.c check_argv.c init_stack_a.c create_array.c swap.c push.c rotate.c reverse.c aux_array.c \
+	   sort_stack.c median.c sorted_up_to.c aux_prints.c sort_comb.c is_sorted.c ft_dlstsize.c operate.c
 
 OBJS = $(SRCS:.c=.o)
 
