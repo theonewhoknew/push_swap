@@ -14,7 +14,7 @@ CFLAGS = -Wall -Werror -Wextra -I .
 all: make_libft $(NAME) 
 
 $(NAME) : $(OBJS) push_swap.h 
-	gcc $(CFLAGS) $(LIBFT) -o $(NAME) $(OBJS)
+	gcc $(CFLAGS) -o $(NAME) $(OBJS) -L$(LIBFT_DIR) -lft
 
 %.o : %.c push_swap.h libft/libft.h
 	gcc -c  $(CFLAGS) $< -o $@

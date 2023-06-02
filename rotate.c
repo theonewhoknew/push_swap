@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   rotate.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dtome-pe <dtome-pe@student.42.fr>          +#+  +:+       +#+        */
+/*   By: theonewhoknew <theonewhoknew@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/02 09:29:23 by dtome-pe          #+#    #+#             */
-/*   Updated: 2023/06/02 09:29:50 by dtome-pe         ###   ########.fr       */
+/*   Updated: 2023/06/02 19:22:30 by theonewhokn      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,8 +30,8 @@ int	rotate_a(t_dlist **a)
 		free (head);
 		*a = next;
 	}
-	return (1);
 	ft_putstr_fd("ra\n", 1);
+	return (1);
 }
 
 void	rotate_b(t_dlist **b)
