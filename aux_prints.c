@@ -1,43 +1,54 @@
-#include "libft/libft.h"
-#include <stdio.h>
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   aux_prints.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: dtome-pe <dtome-pe@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/06/02 08:53:48 by dtome-pe          #+#    #+#             */
+/*   Updated: 2023/06/02 08:54:39 by dtome-pe         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-void print_array(int *arr, int n)
+#include "libft/libft.h"
+
+void	print_array(int *arr, int n)
 {
-	int i;
+	int	i;
 
 	i = 0;
-	printf("array is:\n");
+	ft_printf("array is:\n");
 	while (i < n)
 	{	
-		printf("%d\n", arr[i]);
+		ft_printf("%d\n", arr[i]);
 		i++;
 	}
 }
 
-void print_lists(t_dlist *a, t_dlist *b)
+void	print_lists(t_dlist *a, t_dlist *b)
 {	
-	t_dlist *curr_a;
-	t_dlist *curr_b;
+	t_dlist	*curr_a;
+	t_dlist	*curr_b;
 
 	curr_a = a;
 	curr_b = b;
-	printf("stack a is:    ");
-	printf("stack b is:\n");
+	ft_printf("stack a is:    ");
+	ft_printf("stack b is:\n");
 	while (curr_a != NULL || curr_b != NULL)
 	{	
 		if (curr_a != NULL)
 		{
-			printf("%d\t\t\t", curr_a->content);
+			ft_printf("%d\t\t\t", curr_a->content);
 			curr_a = curr_a->next;
 		}
 		else
-			printf("\t\t\t");
+			ft_printf("\t\t\t");
 		if (curr_b != NULL)
 		{
-			printf("%d\n", curr_b->content);
+			ft_printf("%d\n", curr_b->content);
 			curr_b = curr_b->next;
 		}
 		else
-			printf("\n");
+			ft_printf("\n");
 	}
 }

@@ -1,11 +1,23 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   reverse.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: dtome-pe <dtome-pe@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/06/02 09:28:32 by dtome-pe          #+#    #+#             */
+/*   Updated: 2023/06/02 09:28:58 by dtome-pe         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft/libft.h"
 #include "push_swap.h"
 #include <stdlib.h>
 
-void reverse_a(t_dlist **a)
+void	reverse_a(t_dlist **a)
 {	
 	t_dlist	*tail;
-	t_dlist *next;
+	t_dlist	*next;
 
 	if (*a != NULL && (*a)->next != NULL)
 	{
@@ -18,10 +30,10 @@ void reverse_a(t_dlist **a)
 	ft_putstr_fd("rra\n", 1);
 }
 
-void reverse_b(t_dlist **b)
+void	reverse_b(t_dlist **b)
 {	
 	t_dlist	*tail;
-	t_dlist *next;
+	t_dlist	*next;
 
 	if (*b != NULL && (*b)->next != NULL)
 	{
@@ -34,10 +46,10 @@ void reverse_b(t_dlist **b)
 	ft_putstr_fd("rrb\n", 1);
 }
 
-void reverse_r(t_dlist **a, t_dlist **b)
+void	reverse_r(t_dlist **a, t_dlist **b)
 {	
 	t_dlist	*tail;
-	t_dlist *next;
+	t_dlist	*next;
 
 	if (*a != NULL && (*a)->next != NULL)
 	{

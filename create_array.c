@@ -1,13 +1,25 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   create_array.c                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: dtome-pe <dtome-pe@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/06/02 09:04:02 by dtome-pe          #+#    #+#             */
+/*   Updated: 2023/06/02 09:05:58 by dtome-pe         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 #include "libft/libft.h"
 #include <stdio.h>
 #include <stdlib.h>
 
-int count_numbers(char *argv)
+int	count_numbers(char *argv)
 {
-	int n;
-	int i;
-	int number_to_start;
+	int	n;
+	int	i;
+	int	number_to_start;
 
 	n = 0;
 	i = 0;
@@ -31,10 +43,10 @@ int count_numbers(char *argv)
 	return (n);
 }
 
-int count_argv(int argc, char *argv[])
+int	count_argv(int argc, char *argv[])
 {
-	int i;
-	int n;
+	int	i;
+	int	n;
 
 	i = 1;
 	n = 0;
@@ -46,21 +58,21 @@ int count_argv(int argc, char *argv[])
 	return (n);
 }
 
-char **parse_argv(char *argv)
+char	**parse_argv(char *argv)
 {
-	char **strs;
-	
+	char	**strs;
+
 	strs = ft_split(argv, ' ');
 	return (strs);
 }
 
-int *create_array(int argc, char *argv[])
+int	*create_array(int argc, char *argv[])
 {
-	int i;
-	int *arr;
-	int j;
-	int k;
-	char **strs;
+	int		i;
+	int		*arr;
+	int		j;
+	int		k;
+	char	**strs;
 
 	k = 0;
 	arr = malloc(sizeof (int) * count_argv(argc, argv));
@@ -68,15 +80,11 @@ int *create_array(int argc, char *argv[])
 		return (NULL);
 	i = 1;
 	j = 0;
-	while(i < argc)
+	while (i < argc)
 	{	
-		strs = 	parse_argv(argv[i]);
+		strs = parse_argv(argv[i]);
 		while (strs[j] != NULL)
-		{
-			arr[k] = ft_atoi(strs[j]);
-			k++;
-			j++;
-		}
+			arr[k++] = ft_atoi(strs[j++]);
 		j = 0;
 		free (strs);
 		i++;

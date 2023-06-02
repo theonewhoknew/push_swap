@@ -1,26 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_dlstsize.c                                      :+:      :+:    :+:   */
+/*   ft_reverse_tab.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dtome-pe <dtome-pe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/06/02 09:06:10 by dtome-pe          #+#    #+#             */
-/*   Updated: 2023/06/02 09:06:13 by dtome-pe         ###   ########.fr       */
+/*   Created: 2023/05/27 17:21:09 by dtome-pe          #+#    #+#             */
+/*   Updated: 2023/05/27 17:22:19 by dtome-pe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft/libft.h"
+#include "libft.h"
 
-int	ft_dlstsize(t_dlist *lst)
+void	ft_reverse_tab(int *tab, int n)
 {
-	int	c;
+	int	*first;
+	int	*last;
+	int	temp;
 
-	c = 0;
-	while (lst != NULL)
+	first = tab;
+	last = tab + (n - 1);
+	while (first < last)
 	{
-		c++;
-		lst = lst->next;
+		temp = *first;
+		*first = *last;
+		*last = temp;
+		first++;
+		last--;
 	}
-	return (c);
 }

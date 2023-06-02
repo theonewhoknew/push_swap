@@ -1,26 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_dlstsize.c                                      :+:      :+:    :+:   */
+/*   ft_isprint.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dtome-pe <dtome-pe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/06/02 09:06:10 by dtome-pe          #+#    #+#             */
-/*   Updated: 2023/06/02 09:06:13 by dtome-pe         ###   ########.fr       */
+/*   Created: 2023/05/03 09:01:17 by dtome-pe          #+#    #+#             */
+/*   Updated: 2023/05/29 13:23:45 by dtome-pe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft/libft.h"
-
-int	ft_dlstsize(t_dlist *lst)
+int	ft_isprint(int c)
 {
-	int	c;
-
-	c = 0;
-	while (lst != NULL)
-	{
-		c++;
-		lst = lst->next;
-	}
-	return (c);
+	if (c >= 32 && c <= 126)
+		return (1);
+	return (0);
 }

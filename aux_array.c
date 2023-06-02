@@ -1,9 +1,21 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   aux_array.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: dtome-pe <dtome-pe@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/06/02 08:52:37 by dtome-pe          #+#    #+#             */
+/*   Updated: 2023/06/02 08:53:39 by dtome-pe         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <stdlib.h>
 
-int check_range(int *arr, int range, int n)
+int	check_range(int *arr, int range, int n)
 {
-	int i;
-	int c;
+	int	i;
+	int	c;
 
 	c = 0;
 	i = 0;
@@ -16,12 +28,12 @@ int check_range(int *arr, int range, int n)
 	return (c);
 }
 
-int find_highest(int *arr, int n)
+int	find_highest(int *arr, int n)
 {
-	int i;
-	int highest;
+	int	i;
+	int	highest;
 
-	highest =0;
+	highest = 0;
 	i = 0;
 	while (i < n)
 	{
@@ -32,10 +44,10 @@ int find_highest(int *arr, int n)
 	return (highest);
 }
 
-long sum_array(int *arr, int n)
+long	sum_array(int *arr, int n)
 {
-	int i;
-	long total;
+	int		i;
+	long	total;
 
 	i = 0;
 	total = 0;

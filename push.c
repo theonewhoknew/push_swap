@@ -1,11 +1,23 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   push.c                                             :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: dtome-pe <dtome-pe@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/06/02 09:27:56 by dtome-pe          #+#    #+#             */
+/*   Updated: 2023/06/02 09:28:20 by dtome-pe         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft/libft.h"
 #include "push_swap.h"
 #include <stdlib.h>
 
-void push_a(t_dlist **a, t_dlist **b)
+void	push_a(t_dlist **a, t_dlist **b)
 {	
-	t_dlist *head;
-	t_dlist *next;
+	t_dlist	*head;
+	t_dlist	*next;
 
 	head = *b;
 	if (head != NULL)
@@ -24,10 +36,10 @@ void push_a(t_dlist **a, t_dlist **b)
 	ft_putstr_fd("pa\n", 1);
 }
 
-void push_b(t_dlist **a, t_dlist **b)
+void	push_b(t_dlist **a, t_dlist **b)
 {
-	t_dlist *head;
-	t_dlist *next;
+	t_dlist	*head;
+	t_dlist	*next;
 
 	head = *a;
 	if (*a != NULL)

@@ -1,26 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_dlstsize.c                                      :+:      :+:    :+:   */
+/*   ft_printchar.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dtome-pe <dtome-pe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/06/02 09:06:10 by dtome-pe          #+#    #+#             */
-/*   Updated: 2023/06/02 09:06:13 by dtome-pe         ###   ########.fr       */
+/*   Created: 2023/05/09 09:54:31 by dtome-pe          #+#    #+#             */
+/*   Updated: 2023/05/29 13:19:45 by dtome-pe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft/libft.h"
+#include <unistd.h>
 
-int	ft_dlstsize(t_dlist *lst)
-{
-	int	c;
+size_t	ft_printchar(char c)
+{	
+	size_t	n;
 
-	c = 0;
-	while (lst != NULL)
-	{
-		c++;
-		lst = lst->next;
-	}
-	return (c);
+	n = 0;
+	if (write(1, &c, 1) == -1)
+		return (-1);
+	n++;
+	return (n);
 }

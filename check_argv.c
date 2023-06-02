@@ -1,11 +1,23 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   check_argv.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: dtome-pe <dtome-pe@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/06/02 09:01:14 by dtome-pe          #+#    #+#             */
+/*   Updated: 2023/06/02 09:03:51 by dtome-pe         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft/libft.h"
 #include <limits.h>
 #include <stdio.h>
 
-int check_digits(int argc, char *argv[])
+int	check_digits(int argc, char *argv[])
 {	
-	int i;
-	
+	int	i;
+
 	i = 1;
 	while (i < argc)
 	{
@@ -19,14 +31,14 @@ int check_digits(int argc, char *argv[])
 	return (0);
 }
 
-int check_value_range(int argc, char *argv[])
+int	check_value_range(int argc, char *argv[])
 {
-	int i;
-	
+	int	i;
+
 	i = 1;
 	while (i < argc)
 	{
-		if (ft_atoi(argv[i]) > INT_MAX ||  ft_atoi(argv[i]) < INT_MIN)
+		if (ft_atoi(argv[i]) > INT_MAX || ft_atoi(argv[i]) < INT_MIN)
 		{
 			ft_putstr_fd("Error\n", 2);
 			return (1);
@@ -36,11 +48,11 @@ int check_value_range(int argc, char *argv[])
 	return (0);
 }
 
-int longest_number(int argc, char *argv[])
+int	longest_number(int argc, char *argv[])
 {
-	int longest;
+	int	longest;
 	int	i;
-	int temp;
+	int	temp;
 
 	i = 1;
 	temp = 0;
@@ -55,10 +67,10 @@ int longest_number(int argc, char *argv[])
 	return (longest);
 }
 
-int check_duplicates(int argc, char *argv[])
+int	check_duplicates(int argc, char *argv[])
 {
-	int i;
-	int j;
+	int	i;
+	int	j;
 
 	i = 1;
 	j = 1;
@@ -66,7 +78,8 @@ int check_duplicates(int argc, char *argv[])
 	{
 		while (j < (argc - 1))
 		{
-			if (ft_strncmp(argv[i], argv[j + 1], longest_number(argc, argv)) == 0)
+			if (ft_strncmp(argv[i], argv[j + 1],
+					longest_number(argc, argv)) == 0)
 			{
 				ft_putstr_fd("Error\n", 2);
 				return (1);

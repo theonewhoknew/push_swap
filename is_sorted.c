@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   is_sorted.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: dtome-pe <dtome-pe@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/06/02 09:07:26 by dtome-pe          #+#    #+#             */
+/*   Updated: 2023/06/02 09:07:54 by dtome-pe         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft/libft.h"
 
 static int	ft_dlstsize(t_dlist *lst)
@@ -13,12 +25,11 @@ static int	ft_dlstsize(t_dlist *lst)
 	return (c);
 }
 
-int is_sorted_a(t_dlist *stack, int p)
+int	is_sorted_a(t_dlist *stack, int p)
 {	
-	t_dlist *curr;
+	t_dlist	*curr;
 
 	curr = stack;
-	//printf("p is %d\n", p);
 	while (curr->content != p)
 	{
 		if (curr->content > curr->next->content)
@@ -28,9 +39,9 @@ int is_sorted_a(t_dlist *stack, int p)
 	return (1);
 }
 
-int is_sorted_b(t_dlist *stack)
+int	is_sorted_b(t_dlist *stack)
 {	
-	t_dlist *curr;
+	t_dlist	*curr;
 
 	curr = stack;
 	while (curr->next != NULL)
@@ -42,9 +53,9 @@ int is_sorted_b(t_dlist *stack)
 	return (1);
 }
 
-int is_sorted_both(t_dlist **a, t_dlist **b)
+int	is_sorted_both(t_dlist **a, t_dlist **b)
 {	
-	t_dlist *curr;
+	t_dlist	*curr;
 
 	curr = *a;
 	while (curr->next != NULL)

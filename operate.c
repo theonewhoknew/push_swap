@@ -1,11 +1,29 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   operate.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: dtome-pe <dtome-pe@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/06/02 09:08:47 by dtome-pe          #+#    #+#             */
+/*   Updated: 2023/06/02 09:22:58 by dtome-pe         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft/libft.h"
 #include "push_swap.h"
 
-int operate_a(t_dlist **a, t_dlist **b, int n, t_stack *stack)
+void	set_partition(t_dlist **lst, t_stack *stack)
+{
+	stack->b_n++;
+	stack->b_p[(stack->b_n) - 1] = (*lst)->content;
+}
+
+int	operate_a(t_dlist **a, t_dlist **b, int n, t_stack *stack)
 {	
-	int partition_set;
-	int rot;
-	int median;
+	int	partition_set;
+	int	rot;
+	int	median;
 
 	median = get_median(*a, n);
 	rot = 0;
@@ -17,27 +35,22 @@ int operate_a(t_dlist **a, t_dlist **b, int n, t_stack *stack)
 			push_b(a, b);
 			if (!partition_set)
 			{	
-				stack->b_n++;
-				stack->b_p[(stack->b_n) - 1] = (*b)->content;
+				set_partition(b, stack);
 				partition_set = 1;
-				
 			}
 		}
 		else
-		{
-			rotate_a(a);
-			rot++;
-		}
-		n--;		
+			rot += rotate_a(a);
+		n--;
 	}
 	return (rot);
 }
 
-int operate_b(t_dlist **a, t_dlist **b, int n, t_stack *stack)
+int	operate_b(t_dlist **a, t_dlist **b, int n)
 {	
-	int c;
-	int i;
-	int median;
+	int	c;
+	int	i;
+	int	median;
 
 	median = get_median(*b, n);
 	i = 0;
@@ -51,7 +64,7 @@ int operate_b(t_dlist **a, t_dlist **b, int n, t_stack *stack)
 		}
 		else
 			rotate_b(b);
-		i++;	
+		i++;
 	}
 	return (c);
 }

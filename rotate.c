@@ -1,12 +1,24 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   rotate.c                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: dtome-pe <dtome-pe@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/06/02 09:29:23 by dtome-pe          #+#    #+#             */
+/*   Updated: 2023/06/02 09:29:50 by dtome-pe         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft/libft.h"
 #include "push_swap.h"
 #include <stdlib.h>
 
-void rotate_a(t_dlist **a)
+int	rotate_a(t_dlist **a)
 {	
 	t_dlist	*head;
 	t_dlist	*tail;
-	t_dlist *next;
+	t_dlist	*next;
 
 	if (*a != NULL || (*a)->next != NULL)
 	{
@@ -17,16 +29,16 @@ void rotate_a(t_dlist **a)
 		next->prev = NULL;
 		free (head);
 		*a = next;
-
 	}
+	return (1);
 	ft_putstr_fd("ra\n", 1);
 }
 
-void rotate_b(t_dlist **b)
+void	rotate_b(t_dlist **b)
 {	
 	t_dlist	*head;
 	t_dlist	*tail;
-	t_dlist *next;
+	t_dlist	*next;
 
 	if (*b != NULL || (*b)->next != NULL)
 	{
@@ -41,11 +53,11 @@ void rotate_b(t_dlist **b)
 	ft_putstr_fd("rb\n", 1);
 }
 
-void rotate_r(t_dlist **a, t_dlist **b)
+void	rotate_r(t_dlist **a, t_dlist **b)
 {	
 	t_dlist	*head;
 	t_dlist	*tail;
-	t_dlist *next;
+	t_dlist	*next;
 
 	if (*a != NULL || (*a)->next != NULL)
 	{
@@ -65,7 +77,7 @@ void rotate_r(t_dlist **a, t_dlist **b)
 		next = head->next;
 		next->prev = NULL;
 		free (head);
-		*b = next;;
+		*b = next;
 	}
 	ft_putstr_fd("rr\n", 1);
 }

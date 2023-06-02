@@ -1,11 +1,23 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   median.c                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: dtome-pe <dtome-pe@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/06/02 09:08:03 by dtome-pe          #+#    #+#             */
+/*   Updated: 2023/06/02 09:08:38 by dtome-pe         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft/libft.h"
 #include <stdlib.h>
 
-void sort_array(int *arr, int n)
+void	sort_array(int *arr, int n)
 {
-	int i;
-	int j;
-	int temp;
+	int	i;
+	int	j;
+	int	temp;
 
 	i = 0;
 	j = 0;
@@ -27,7 +39,7 @@ void sort_array(int *arr, int n)
 	}
 }
 
-int calculate_median(int *arr, int n)
+int	calculate_median(int *arr, int n)
 {	
 	if (n % 2 != 0)
 	{
@@ -38,16 +50,16 @@ int calculate_median(int *arr, int n)
 		return ((arr[n / 2 - 1] + arr[n / 2]) / 2);
 }
 
-int *get_array(t_dlist *stack, int n)
+int	*get_array(t_dlist *stack, int n)
 {	
-	int *new_arr;
-	int i;
+	int	*new_arr;
+	int	i;
 
 	i = 0;
 	new_arr = (int *)malloc(sizeof (int) * n);
 	if (!new_arr)
 		return (NULL);
-	while(n)
+	while (n)
 	{
 		new_arr[i] = stack->content;
 		i++;
@@ -57,10 +69,10 @@ int *get_array(t_dlist *stack, int n)
 	return (new_arr);
 }
 
-int get_median(t_dlist *list, int n)
+int	get_median(t_dlist *list, int n)
 {	
-	int *arr;
-	int median;
+	int	*arr;
+	int	median;
 
 	arr = NULL;
 	arr = get_array(list, n);

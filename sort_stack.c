@@ -1,17 +1,35 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   sort_stack.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: dtome-pe <dtome-pe@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/06/02 09:32:10 by dtome-pe          #+#    #+#             */
+/*   Updated: 2023/06/02 09:58:02 by dtome-pe         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft/libft.h"
 #include "push_swap.h"
 #include <stdio.h>
 #include <stdlib.h>
 
-void first_sort(t_dlist **a, t_dlist **b, int n, t_stack *stack)
+void	aux_first_sort(t_dlist **lst, t_stack *stack)
+{
+	stack->b_n++;
+	stack->b_p[(stack->b_n) - 1] = (*lst)->content;
+}
+
+void	first_sort(t_dlist **a, t_dlist **b, int n, t_stack *stack)
 {	
-	int median;
-	int i;
-	int partition_set;
-	
+	int	median;
+	int	i;
+	int	partition_set;
+
 	partition_set = 0;
 	if (ft_dlstsize(*a) <= 3)
-		return ;	
+		return ;
 	median = get_median(*a, n);
 	i = 0;
 	while (i < n)
@@ -21,22 +39,21 @@ void first_sort(t_dlist **a, t_dlist **b, int n, t_stack *stack)
 			push_b(a, b);
 			if (!partition_set)
 			{	
-				stack->b_n++;
-				stack->b_p[(stack->b_n) - 1] = (*b)->content;
+				aux_first_sort(b, stack);
 				partition_set = 1;
 			}
 		}
 		else
 			rotate_a(a);
-		i++;	
+		i++;
 	}
 	first_sort(a, b, ft_dlstsize(*a), stack);
 }
 
-void quicksort_a(t_dlist **a, t_dlist **b, int n, t_stack *stack)
+void	quicksort_a(t_dlist **a, t_dlist **b, int n, t_stack *stack)
 {	
-	int rotated;
-	
+	int	rotated;
+
 	rotated = operate_a(a, b, n, stack);
 	while (rotated)
 	{
@@ -46,14 +63,15 @@ void quicksort_a(t_dlist **a, t_dlist **b, int n, t_stack *stack)
 	if (elements_after_sorted(*a, sorted_up_to(*a, *b)) <= 3)
 		sort_a(a, elements_after_sorted(*a, sorted_up_to(*a, *b)));
 	else
-		quicksort_a(a, b, elements_after_sorted(*a, sorted_up_to(*a, *b)), stack);
+		quicksort_a(a, b, elements_after_sorted(*a, sorted_up_to(*a, *b)),
+			stack);
 }
 
-void quicksort_b(t_dlist **a, t_dlist **b, int n, t_stack *stack)
+void	quicksort_b(t_dlist **a, t_dlist **b, int n, t_stack *stack)
 {	
-	int pushed;
+	int	pushed;
 
-	pushed = operate_b(a, b, n, stack);
+	pushed = operate_b(a, b, n);
 	if (pushed <= 3)
 	{	
 		sort_a(a, elements_after_sorted(*a, sorted_up_to(*a, *b)));
@@ -61,18 +79,19 @@ void quicksort_b(t_dlist **a, t_dlist **b, int n, t_stack *stack)
 		stack->a_p[0] = sorted_up_to(*a, *b);
 	}
 	else if (pushed > 3)
-		quicksort_a(a, b, elements_after_sorted(*a, sorted_up_to(*a, *b)), stack); 
+		quicksort_a(a, b, elements_after_sorted(*a, sorted_up_to(*a, *b)),
+			stack);
 }
 
-void sort_stack(t_dlist *a, t_dlist *b, int *arr, int n)
+void	sort_stack(t_dlist *a, t_dlist *b)
 {	
-	t_stack stack;
+	t_stack	stack;
 
 	stack.a_n = 0;
 	stack.b_n = 0;
 	first_sort(&a, &b, ft_dlstsize(a), &stack);
 	sort_a(&a, ft_dlstsize(a));
 	while (is_sorted_both(&a, &b) != 1)
-		quicksort_b(&a, &b, get_partition(&stack, b), &stack);	
+		quicksort_b(&a, &b, get_partition(&stack, b), &stack);
 	return ;
 }

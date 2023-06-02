@@ -1,51 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sort_comb.c                                        :+:      :+:    :+:   */
+/*   init_stack_a.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dtome-pe <dtome-pe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/06/02 09:31:19 by dtome-pe          #+#    #+#             */
-/*   Updated: 2023/06/02 09:32:05 by dtome-pe         ###   ########.fr       */
+/*   Created: 2023/06/02 09:06:51 by dtome-pe          #+#    #+#             */
+/*   Updated: 2023/06/02 09:07:19 by dtome-pe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft/libft.h"
 #include "push_swap.h"
+#include "libft/libft.h"
+#include <stdio.h>
+#include <stdlib.h>
 
-void	do_3_2_1(t_dlist **a)
-{
-	swap_a(*a);
-	rotate_a(a);
-	swap_a(*a);
-	reverse_a(a);
-	swap_a(*a);
-}
+t_dlist	*init_stack_a(int argc, char *argv[])
+{	
+	int		i;
+	t_dlist	*head;
+	t_dlist	*tail;
+	int		j;
+	char	**strs;
 
-void	do_2_3_1(t_dlist **a)
-{
-	rotate_a(a);
-	swap_a(*a);
-	reverse_a(a);
-	swap_a(*a);
-}
-
-void	do_3_1_2(t_dlist **a)
-{
-	swap_a(*a);
-	rotate_a(a);
-	swap_a(*a);
-	reverse_a(a);
-}
-
-void	do_1_3_2(t_dlist **a)
-{
-	rotate_a(a);
-	swap_a(*a);
-	reverse_a(a);
-}
-
-void	do_2_1_3(t_dlist **a)
-{
-	swap_a(*a);
+	head = NULL;
+	tail = NULL;
+	i = 1;
+	j = 0;
+	while (i < argc)
+	{	
+		strs = parse_argv(argv[i]);
+		while (strs[j] != NULL)
+		{
+			ft_dlstadd_back(&head, &tail, ft_dlstnew(ft_atoi(strs[j])));
+			j++;
+		}
+		j = 0;
+		free (strs);
+		i++;
+	}
+	return (head);
 }

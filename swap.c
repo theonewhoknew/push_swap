@@ -1,12 +1,24 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   swap.c                                             :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: dtome-pe <dtome-pe@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/06/02 09:52:36 by dtome-pe          #+#    #+#             */
+/*   Updated: 2023/06/02 09:53:29 by dtome-pe         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft/libft.h"
 #include "push_swap.h"
 #include <stdio.h>
 
-void swap_a(t_dlist *a)
+void	swap_a(t_dlist *a)
 {
-	int temp;
+	int	temp;
 
-	if(a != NULL && a->next != NULL)
+	if (a != NULL && a->next != NULL)
 	{
 		temp = 0;
 		temp = a->content;
@@ -16,11 +28,11 @@ void swap_a(t_dlist *a)
 	ft_putstr_fd("sa\n", 1);
 }
 
-void swap_b(t_dlist *b)
+void	swap_b(t_dlist *b)
 {
-	int temp;
+	int	temp;
 
-	if(b != NULL && b->next != NULL)
+	if (b != NULL && b->next != NULL)
 	{
 		temp = 0;
 		temp = b->content;
@@ -30,18 +42,18 @@ void swap_b(t_dlist *b)
 	ft_putstr_fd("sb\n", 1);
 }
 
-void swap_s(t_dlist *a, t_dlist *b)
+void	swap_s(t_dlist *a, t_dlist *b)
 {
-	int temp;
+	int	temp;
 
-	if(a != NULL && a->next != NULL)
+	if (a != NULL && a->next != NULL)
 	{
 		temp = 0;
 		temp = a->content;
 		a->content = a->next->content;
 		a->next->content = temp;
 	}
-	if(b != NULL && b->next != NULL)
+	if (b != NULL && b->next != NULL)
 	{
 		temp = 0;
 		temp = b->content;

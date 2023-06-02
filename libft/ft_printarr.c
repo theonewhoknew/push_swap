@@ -1,26 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_dlstsize.c                                      :+:      :+:    :+:   */
+/*   ft_printarr.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dtome-pe <dtome-pe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/06/02 09:06:10 by dtome-pe          #+#    #+#             */
-/*   Updated: 2023/06/02 09:06:13 by dtome-pe         ###   ########.fr       */
+/*   Created: 2023/05/27 17:25:12 by dtome-pe          #+#    #+#             */
+/*   Updated: 2023/05/27 17:25:18 by dtome-pe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft/libft.h"
+#include "libft.h"
 
-int	ft_dlstsize(t_dlist *lst)
+void	ft_printarr(int *arr, int n)
 {
-	int	c;
+	int	i;
 
-	c = 0;
-	while (lst != NULL)
+	i = 0;
+	while (i < n)
 	{
-		c++;
-		lst = lst->next;
+		ft_putnbr_fd(arr[i], 1);
+		ft_putchar_fd('\n', 1);
+		i++;
 	}
-	return (c);
 }
