@@ -21,19 +21,19 @@ void	aux_first_sort(t_dlist **lst, t_stack *stack)
 	stack->b_p[(stack->b_n) - 1] = (*lst)->content;
 }
 
-void	first_sort(t_dlist **a, t_dlist **b, int n, t_stack *stack)
+void	first_sort(t_dlist **a, t_dlist **b, int median, t_stack *stack)
 {	
-	int	median;
 	int	i;
 	int	partition_set;
 
 	partition_set = 0;
 	if (ft_dlstsize(*a) <= 3)
 		return ;
-	median = get_median(*a, n);
 	i = 0;
-	while (i < n)
+	while (i < ft_dlstsize(*a))
 	{	
+		while (ft_dlstlast(*a)->content <= median)
+			reverse_a(a);
 		if ((*a)->content <= median)
 		{
 			push_b(a, b);
@@ -42,12 +42,15 @@ void	first_sort(t_dlist **a, t_dlist **b, int n, t_stack *stack)
 				aux_first_sort(b, stack);
 				partition_set = 1;
 			}
+			median = get_half_median(*a, ft_dlstsize(*a));
 		}
+		else if ((*a)->next->content <= median && (*a)->content < ft_dlstlast(*a)->content)
+			swap_a(*a);
 		else
 			rotate_a(a);
 		i++;
 	}
-	first_sort(a, b, ft_dlstsize(*a), stack);
+	first_sort(a, b, get_half_median(*a, ft_dlstsize(*a)), stack);
 }
 
 void	quicksort_a(t_dlist **a, t_dlist **b, int n, t_stack *stack)
@@ -86,10 +89,12 @@ void	quicksort_b(t_dlist **a, t_dlist **b, int n, t_stack *stack)
 void	sort_stack(t_dlist *a, t_dlist *b)
 {	
 	t_stack	stack;
+	int median;
 
+	median = get_half_median(a, ft_dlstsize(a));
 	stack.a_n = 0;
 	stack.b_n = 0;
-	first_sort(&a, &b, ft_dlstsize(a), &stack);
+	first_sort(&a, &b, median, &stack);
 	sort_a(&a, ft_dlstsize(a));
 	while (is_sorted_both(&a, &b) != 1)
 		quicksort_b(&a, &b, get_partition(&stack, b), &stack);

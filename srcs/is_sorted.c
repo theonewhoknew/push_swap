@@ -58,6 +58,8 @@ int	is_sorted_both(t_dlist **a, t_dlist **b)
 	t_dlist	*curr;
 
 	curr = *a;
+	if (ft_dlstsize(*a) == 0)
+		return (0);
 	while (curr->next != NULL)
 	{
 		if (curr->content > curr->next->content)

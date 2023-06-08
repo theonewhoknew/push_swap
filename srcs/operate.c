@@ -52,7 +52,7 @@ int	operate_b(t_dlist **a, t_dlist **b, int n)
 	int	i;
 	int	median;
 
-	median = get_median(*b, n);
+	median = get_half_median(*b, n);
 	i = 0;
 	c = 0;
 	while (i < n)

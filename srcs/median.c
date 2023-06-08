@@ -81,3 +81,16 @@ int	get_median(t_dlist *list, int n)
 	free (arr);
 	return (median);
 }
+
+int	get_half_median(t_dlist *list, int n)
+{	
+	int	*arr;
+	int	median;
+
+	arr = NULL;
+	arr = get_array(list, n);
+	sort_array(arr, n);
+	median = calculate_median(arr, n / 2);
+	free (arr);
+	return (median);
+}

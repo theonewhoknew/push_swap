@@ -69,5 +69,6 @@ int		get_partition(t_stack *stack, t_dlist *list);
 void	sort_a(t_dlist **a, int elements);
 int		operate_a(t_dlist **a, t_dlist **b, int n, t_stack *stack);
 int		operate_b(t_dlist **a, t_dlist **b, int n);
+int		get_half_median(t_dlist *list, int n);
 
 #endif
