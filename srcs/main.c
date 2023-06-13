@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dtome-pe <dtome-pe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/02 09:15:26 by dtome-pe          #+#    #+#             */
-/*   Updated: 2023/06/02 09:57:38 by dtome-pe         ###   ########.fr       */
+/*   Updated: 2023/06/13 15:13:12 by dtome-pe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,8 @@ int	main(int argc, char *argv[])
 	if (check_argv(argc, argv) == 1)
 		return (1);
 	a = init_stack_a(argc, argv);
+	put_order(a, ft_dlstsize(a));
+	print_order(a);
 	sort_stack(a, b);
 	return (0);
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_dlstnew.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: theonewhoknew <theonewhoknew@student.42    +#+  +:+       +#+        */
+/*   By: dtome-pe <dtome-pe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/09 10:12:28 by dtome-pe          #+#    #+#             */
-/*   Updated: 2023/05/23 11:14:29 by theonewhokn      ###   ########.fr       */
+/*   Updated: 2023/06/13 11:09:23 by dtome-pe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 
-t_dlist	*ft_dlstnew(int content)
+t_dlist	*ft_dlstnew(int content, int order)
 {
 	t_dlist	*node;
 
@@ -22,6 +22,7 @@ t_dlist	*ft_dlstnew(int content)
 	if (!node)
 		return (NULL);
 	node->content = content;
+	node->order = order;
 	node->prev = NULL;
 	node->next = NULL;
 	return (node);

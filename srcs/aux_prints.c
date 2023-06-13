@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   aux_prints.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: theonewhoknew <theonewhoknew@student.42    +#+  +:+       +#+        */
+/*   By: dtome-pe <dtome-pe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/02 08:53:48 by dtome-pe          #+#    #+#             */
-/*   Updated: 2023/06/02 19:05:16 by theonewhokn      ###   ########.fr       */
+/*   Updated: 2023/06/13 11:04:31 by dtome-pe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,4 +51,17 @@ void	print_lists(t_dlist *a, t_dlist *b)
 		else
 			ft_printf("\n");
 	}
+}
+
+void print_order(t_dlist *a)
+{
+	t_dlist *curr;
+
+	curr = a;
+	while (curr != NULL)
+	{
+		ft_printf("%d ", curr->order);
+		curr = curr->next;
+	}
+	ft_printf("\n");
 }

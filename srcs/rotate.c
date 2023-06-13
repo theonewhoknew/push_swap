@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   rotate.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: theonewhoknew <theonewhoknew@student.42    +#+  +:+       +#+        */
+/*   By: dtome-pe <dtome-pe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/02 09:29:23 by dtome-pe          #+#    #+#             */
-/*   Updated: 2023/06/02 19:22:30 by theonewhokn      ###   ########.fr       */
+/*   Updated: 2023/06/13 16:03:13 by dtome-pe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ int	rotate_a(t_dlist **a)
 	{
 		head = *a;
 		tail = ft_dlstlast(*a);
-		ft_dlstadd_back(&head, &tail, ft_dlstnew(head->content));
+		ft_dlstadd_back(&head, &tail, ft_dlstnew(head->content, head->order));
 		next = head->next;
 		next->prev = NULL;
 		free (head);
@@ -41,10 +41,10 @@ void	rotate_b(t_dlist **b)
 	t_dlist	*next;
 
 	if (*b != NULL || (*b)->next != NULL)
-	{
+	{	
 		head = *b;
 		tail = ft_dlstlast(*b);
-		ft_dlstadd_back(&head, &tail, ft_dlstnew(head->content));
+		ft_dlstadd_back(&head, &tail, ft_dlstnew(head->content, head->order));
 		next = head->next;
 		next->prev = NULL;
 		free (head);
@@ -63,7 +63,7 @@ void	rotate_r(t_dlist **a, t_dlist **b)
 	{
 		head = *a;
 		tail = ft_dlstlast(*a);
-		ft_dlstadd_back(&head, &tail, ft_dlstnew(head->content));
+		ft_dlstadd_back(&head, &tail, ft_dlstnew(head->content, head->order));
 		next = head->next;
 		next->prev = NULL;
 		free (head);
@@ -73,7 +73,7 @@ void	rotate_r(t_dlist **a, t_dlist **b)
 	{
 		head = *b;
 		tail = ft_dlstlast(*b);
-		ft_dlstadd_back(&head, &tail, ft_dlstnew(head->content));
+		ft_dlstadd_back(&head, &tail, ft_dlstnew(head->content, head->order));
 		next = head->next;
 		next->prev = NULL;
 		free (head);

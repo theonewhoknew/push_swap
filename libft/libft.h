@@ -6,7 +6,7 @@
 /*   By: dtome-pe <dtome-pe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/09 09:35:45 by dtome-pe          #+#    #+#             */
-/*   Updated: 2023/05/29 13:52:46 by dtome-pe         ###   ########.fr       */
+/*   Updated: 2023/06/13 11:10:10 by dtome-pe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ typedef struct s_list
 typedef struct s_double_list
 {
 	int						content;
+	int						order;
 	struct s_double_list	*next;
 	struct s_double_list	*prev;
 }		t_dlist;
@@ -89,7 +90,7 @@ size_t		ft_putadd(void *ptr);
 size_t		ft_putunbr(unsigned int n);
 size_t		ft_puthexnbr(unsigned int n, char *base);
 int			ft_contains_digit(char *str);
-t_dlist		*ft_dlstnew(int content);
+t_dlist		*ft_dlstnew(int content, int order);
 void		ft_dlstadd_back(t_dlist **head, t_dlist **tail, t_dlist *new);
 t_dlist		*ft_dlstlast(t_dlist *lst);
 void		ft_dlstadd_front(t_dlist **lst, t_dlist *new);

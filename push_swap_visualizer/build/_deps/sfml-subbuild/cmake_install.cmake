@@ -1,4 +1,4 @@
-# Install script for directory: /home/diego/repos/push_swap/push_swap_visualizer/build/_deps/sfml-subbuild
+# Install script for directory: /Users/dtome-pe/repos/CURSUS/push_swap_github/push_swap_visualizer/build/_deps/sfml-subbuild
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -27,11 +27,6 @@ if(NOT CMAKE_INSTALL_COMPONENT)
   endif()
 endif()
 
-# Install shared libraries without execute permission?
-if(NOT DEFINED CMAKE_INSTALL_SO_NO_EXE)
-  set(CMAKE_INSTALL_SO_NO_EXE "1")
-endif()
-
 # Is this installation the result of a crosscompile?
 if(NOT DEFINED CMAKE_CROSSCOMPILING)
   set(CMAKE_CROSSCOMPILING "FALSE")
@@ -45,5 +40,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/diego/repos/push_swap/push_swap_visualizer/build/_deps/sfml-subbuild/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/Users/dtome-pe/repos/CURSUS/push_swap_github/push_swap_visualizer/build/_deps/sfml-subbuild/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

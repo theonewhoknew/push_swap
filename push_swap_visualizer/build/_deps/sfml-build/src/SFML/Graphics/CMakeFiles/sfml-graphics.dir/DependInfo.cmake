@@ -1,68 +1,55 @@
+
+# Consider dependencies only in project.
+set(CMAKE_DEPENDS_IN_PROJECT_ONLY OFF)
+
 # The set of languages for which implicit dependencies are needed:
 set(CMAKE_DEPENDS_LANGUAGES
-  "CXX"
-  )
-# The set of files for implicit dependencies of each language:
-set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/diego/repos/push_swap/push_swap_visualizer/build/_deps/sfml-src/src/SFML/Graphics/BlendMode.cpp" "/home/diego/repos/push_swap/push_swap_visualizer/build/_deps/sfml-build/src/SFML/Graphics/CMakeFiles/sfml-graphics.dir/BlendMode.cpp.o"
-  "/home/diego/repos/push_swap/push_swap_visualizer/build/_deps/sfml-src/src/SFML/Graphics/CircleShape.cpp" "/home/diego/repos/push_swap/push_swap_visualizer/build/_deps/sfml-build/src/SFML/Graphics/CMakeFiles/sfml-graphics.dir/CircleShape.cpp.o"
-  "/home/diego/repos/push_swap/push_swap_visualizer/build/_deps/sfml-src/src/SFML/Graphics/Color.cpp" "/home/diego/repos/push_swap/push_swap_visualizer/build/_deps/sfml-build/src/SFML/Graphics/CMakeFiles/sfml-graphics.dir/Color.cpp.o"
-  "/home/diego/repos/push_swap/push_swap_visualizer/build/_deps/sfml-src/src/SFML/Graphics/ConvexShape.cpp" "/home/diego/repos/push_swap/push_swap_visualizer/build/_deps/sfml-build/src/SFML/Graphics/CMakeFiles/sfml-graphics.dir/ConvexShape.cpp.o"
-  "/home/diego/repos/push_swap/push_swap_visualizer/build/_deps/sfml-src/src/SFML/Graphics/Font.cpp" "/home/diego/repos/push_swap/push_swap_visualizer/build/_deps/sfml-build/src/SFML/Graphics/CMakeFiles/sfml-graphics.dir/Font.cpp.o"
-  "/home/diego/repos/push_swap/push_swap_visualizer/build/_deps/sfml-src/src/SFML/Graphics/GLCheck.cpp" "/home/diego/repos/push_swap/push_swap_visualizer/build/_deps/sfml-build/src/SFML/Graphics/CMakeFiles/sfml-graphics.dir/GLCheck.cpp.o"
-  "/home/diego/repos/push_swap/push_swap_visualizer/build/_deps/sfml-src/src/SFML/Graphics/GLExtensions.cpp" "/home/diego/repos/push_swap/push_swap_visualizer/build/_deps/sfml-build/src/SFML/Graphics/CMakeFiles/sfml-graphics.dir/GLExtensions.cpp.o"
-  "/home/diego/repos/push_swap/push_swap_visualizer/build/_deps/sfml-src/src/SFML/Graphics/GLLoader.cpp" "/home/diego/repos/push_swap/push_swap_visualizer/build/_deps/sfml-build/src/SFML/Graphics/CMakeFiles/sfml-graphics.dir/GLLoader.cpp.o"
-  "/home/diego/repos/push_swap/push_swap_visualizer/build/_deps/sfml-src/src/SFML/Graphics/Glsl.cpp" "/home/diego/repos/push_swap/push_swap_visualizer/build/_deps/sfml-build/src/SFML/Graphics/CMakeFiles/sfml-graphics.dir/Glsl.cpp.o"
-  "/home/diego/repos/push_swap/push_swap_visualizer/build/_deps/sfml-src/src/SFML/Graphics/Image.cpp" "/home/diego/repos/push_swap/push_swap_visualizer/build/_deps/sfml-build/src/SFML/Graphics/CMakeFiles/sfml-graphics.dir/Image.cpp.o"
-  "/home/diego/repos/push_swap/push_swap_visualizer/build/_deps/sfml-src/src/SFML/Graphics/ImageLoader.cpp" "/home/diego/repos/push_swap/push_swap_visualizer/build/_deps/sfml-build/src/SFML/Graphics/CMakeFiles/sfml-graphics.dir/ImageLoader.cpp.o"
-  "/home/diego/repos/push_swap/push_swap_visualizer/build/_deps/sfml-src/src/SFML/Graphics/RectangleShape.cpp" "/home/diego/repos/push_swap/push_swap_visualizer/build/_deps/sfml-build/src/SFML/Graphics/CMakeFiles/sfml-graphics.dir/RectangleShape.cpp.o"
-  "/home/diego/repos/push_swap/push_swap_visualizer/build/_deps/sfml-src/src/SFML/Graphics/RenderStates.cpp" "/home/diego/repos/push_swap/push_swap_visualizer/build/_deps/sfml-build/src/SFML/Graphics/CMakeFiles/sfml-graphics.dir/RenderStates.cpp.o"
-  "/home/diego/repos/push_swap/push_swap_visualizer/build/_deps/sfml-src/src/SFML/Graphics/RenderTarget.cpp" "/home/diego/repos/push_swap/push_swap_visualizer/build/_deps/sfml-build/src/SFML/Graphics/CMakeFiles/sfml-graphics.dir/RenderTarget.cpp.o"
-  "/home/diego/repos/push_swap/push_swap_visualizer/build/_deps/sfml-src/src/SFML/Graphics/RenderTexture.cpp" "/home/diego/repos/push_swap/push_swap_visualizer/build/_deps/sfml-build/src/SFML/Graphics/CMakeFiles/sfml-graphics.dir/RenderTexture.cpp.o"
-  "/home/diego/repos/push_swap/push_swap_visualizer/build/_deps/sfml-src/src/SFML/Graphics/RenderTextureImpl.cpp" "/home/diego/repos/push_swap/push_swap_visualizer/build/_deps/sfml-build/src/SFML/Graphics/CMakeFiles/sfml-graphics.dir/RenderTextureImpl.cpp.o"
-  "/home/diego/repos/push_swap/push_swap_visualizer/build/_deps/sfml-src/src/SFML/Graphics/RenderTextureImplDefault.cpp" "/home/diego/repos/push_swap/push_swap_visualizer/build/_deps/sfml-build/src/SFML/Graphics/CMakeFiles/sfml-graphics.dir/RenderTextureImplDefault.cpp.o"
-  "/home/diego/repos/push_swap/push_swap_visualizer/build/_deps/sfml-src/src/SFML/Graphics/RenderTextureImplFBO.cpp" "/home/diego/repos/push_swap/push_swap_visualizer/build/_deps/sfml-build/src/SFML/Graphics/CMakeFiles/sfml-graphics.dir/RenderTextureImplFBO.cpp.o"
-  "/home/diego/repos/push_swap/push_swap_visualizer/build/_deps/sfml-src/src/SFML/Graphics/RenderWindow.cpp" "/home/diego/repos/push_swap/push_swap_visualizer/build/_deps/sfml-build/src/SFML/Graphics/CMakeFiles/sfml-graphics.dir/RenderWindow.cpp.o"
-  "/home/diego/repos/push_swap/push_swap_visualizer/build/_deps/sfml-src/src/SFML/Graphics/Shader.cpp" "/home/diego/repos/push_swap/push_swap_visualizer/build/_deps/sfml-build/src/SFML/Graphics/CMakeFiles/sfml-graphics.dir/Shader.cpp.o"
-  "/home/diego/repos/push_swap/push_swap_visualizer/build/_deps/sfml-src/src/SFML/Graphics/Shape.cpp" "/home/diego/repos/push_swap/push_swap_visualizer/build/_deps/sfml-build/src/SFML/Graphics/CMakeFiles/sfml-graphics.dir/Shape.cpp.o"
-  "/home/diego/repos/push_swap/push_swap_visualizer/build/_deps/sfml-src/src/SFML/Graphics/Sprite.cpp" "/home/diego/repos/push_swap/push_swap_visualizer/build/_deps/sfml-build/src/SFML/Graphics/CMakeFiles/sfml-graphics.dir/Sprite.cpp.o"
-  "/home/diego/repos/push_swap/push_swap_visualizer/build/_deps/sfml-src/src/SFML/Graphics/Text.cpp" "/home/diego/repos/push_swap/push_swap_visualizer/build/_deps/sfml-build/src/SFML/Graphics/CMakeFiles/sfml-graphics.dir/Text.cpp.o"
-  "/home/diego/repos/push_swap/push_swap_visualizer/build/_deps/sfml-src/src/SFML/Graphics/Texture.cpp" "/home/diego/repos/push_swap/push_swap_visualizer/build/_deps/sfml-build/src/SFML/Graphics/CMakeFiles/sfml-graphics.dir/Texture.cpp.o"
-  "/home/diego/repos/push_swap/push_swap_visualizer/build/_deps/sfml-src/src/SFML/Graphics/TextureSaver.cpp" "/home/diego/repos/push_swap/push_swap_visualizer/build/_deps/sfml-build/src/SFML/Graphics/CMakeFiles/sfml-graphics.dir/TextureSaver.cpp.o"
-  "/home/diego/repos/push_swap/push_swap_visualizer/build/_deps/sfml-src/src/SFML/Graphics/Transform.cpp" "/home/diego/repos/push_swap/push_swap_visualizer/build/_deps/sfml-build/src/SFML/Graphics/CMakeFiles/sfml-graphics.dir/Transform.cpp.o"
-  "/home/diego/repos/push_swap/push_swap_visualizer/build/_deps/sfml-src/src/SFML/Graphics/Transformable.cpp" "/home/diego/repos/push_swap/push_swap_visualizer/build/_deps/sfml-build/src/SFML/Graphics/CMakeFiles/sfml-graphics.dir/Transformable.cpp.o"
-  "/home/diego/repos/push_swap/push_swap_visualizer/build/_deps/sfml-src/src/SFML/Graphics/Vertex.cpp" "/home/diego/repos/push_swap/push_swap_visualizer/build/_deps/sfml-build/src/SFML/Graphics/CMakeFiles/sfml-graphics.dir/Vertex.cpp.o"
-  "/home/diego/repos/push_swap/push_swap_visualizer/build/_deps/sfml-src/src/SFML/Graphics/VertexArray.cpp" "/home/diego/repos/push_swap/push_swap_visualizer/build/_deps/sfml-build/src/SFML/Graphics/CMakeFiles/sfml-graphics.dir/VertexArray.cpp.o"
-  "/home/diego/repos/push_swap/push_swap_visualizer/build/_deps/sfml-src/src/SFML/Graphics/VertexBuffer.cpp" "/home/diego/repos/push_swap/push_swap_visualizer/build/_deps/sfml-build/src/SFML/Graphics/CMakeFiles/sfml-graphics.dir/VertexBuffer.cpp.o"
-  "/home/diego/repos/push_swap/push_swap_visualizer/build/_deps/sfml-src/src/SFML/Graphics/View.cpp" "/home/diego/repos/push_swap/push_swap_visualizer/build/_deps/sfml-build/src/SFML/Graphics/CMakeFiles/sfml-graphics.dir/View.cpp.o"
-  )
-set(CMAKE_CXX_COMPILER_ID "Clang")
-
-# Preprocessor definitions for this target.
-set(CMAKE_TARGET_DEFINITIONS_CXX
-  "SFML_GRAPHICS_EXPORTS"
-  "STBI_FAILURE_USERMSG"
   )
 
-# The include file search paths:
-set(CMAKE_CXX_TARGET_INCLUDE_PATH
-  "_deps/sfml-src/include"
-  "_deps/sfml-src/src"
-  "_deps/sfml-src/extlibs/headers/stb_image"
-  "/usr/include/freetype2"
+# The set of dependency files which are needed:
+set(CMAKE_DEPENDS_DEPENDENCY_FILES
+  "/Users/dtome-pe/repos/CURSUS/push_swap_github/push_swap_visualizer/build/_deps/sfml-src/src/SFML/Graphics/BlendMode.cpp" "_deps/sfml-build/src/SFML/Graphics/CMakeFiles/sfml-graphics.dir/BlendMode.cpp.o" "gcc" "_deps/sfml-build/src/SFML/Graphics/CMakeFiles/sfml-graphics.dir/BlendMode.cpp.o.d"
+  "/Users/dtome-pe/repos/CURSUS/push_swap_github/push_swap_visualizer/build/_deps/sfml-src/src/SFML/Graphics/CircleShape.cpp" "_deps/sfml-build/src/SFML/Graphics/CMakeFiles/sfml-graphics.dir/CircleShape.cpp.o" "gcc" "_deps/sfml-build/src/SFML/Graphics/CMakeFiles/sfml-graphics.dir/CircleShape.cpp.o.d"
+  "/Users/dtome-pe/repos/CURSUS/push_swap_github/push_swap_visualizer/build/_deps/sfml-src/src/SFML/Graphics/Color.cpp" "_deps/sfml-build/src/SFML/Graphics/CMakeFiles/sfml-graphics.dir/Color.cpp.o" "gcc" "_deps/sfml-build/src/SFML/Graphics/CMakeFiles/sfml-graphics.dir/Color.cpp.o.d"
+  "/Users/dtome-pe/repos/CURSUS/push_swap_github/push_swap_visualizer/build/_deps/sfml-src/src/SFML/Graphics/ConvexShape.cpp" "_deps/sfml-build/src/SFML/Graphics/CMakeFiles/sfml-graphics.dir/ConvexShape.cpp.o" "gcc" "_deps/sfml-build/src/SFML/Graphics/CMakeFiles/sfml-graphics.dir/ConvexShape.cpp.o.d"
+  "/Users/dtome-pe/repos/CURSUS/push_swap_github/push_swap_visualizer/build/_deps/sfml-src/src/SFML/Graphics/Font.cpp" "_deps/sfml-build/src/SFML/Graphics/CMakeFiles/sfml-graphics.dir/Font.cpp.o" "gcc" "_deps/sfml-build/src/SFML/Graphics/CMakeFiles/sfml-graphics.dir/Font.cpp.o.d"
+  "/Users/dtome-pe/repos/CURSUS/push_swap_github/push_swap_visualizer/build/_deps/sfml-src/src/SFML/Graphics/GLCheck.cpp" "_deps/sfml-build/src/SFML/Graphics/CMakeFiles/sfml-graphics.dir/GLCheck.cpp.o" "gcc" "_deps/sfml-build/src/SFML/Graphics/CMakeFiles/sfml-graphics.dir/GLCheck.cpp.o.d"
+  "/Users/dtome-pe/repos/CURSUS/push_swap_github/push_swap_visualizer/build/_deps/sfml-src/src/SFML/Graphics/GLExtensions.cpp" "_deps/sfml-build/src/SFML/Graphics/CMakeFiles/sfml-graphics.dir/GLExtensions.cpp.o" "gcc" "_deps/sfml-build/src/SFML/Graphics/CMakeFiles/sfml-graphics.dir/GLExtensions.cpp.o.d"
+  "/Users/dtome-pe/repos/CURSUS/push_swap_github/push_swap_visualizer/build/_deps/sfml-src/src/SFML/Graphics/GLLoader.cpp" "_deps/sfml-build/src/SFML/Graphics/CMakeFiles/sfml-graphics.dir/GLLoader.cpp.o" "gcc" "_deps/sfml-build/src/SFML/Graphics/CMakeFiles/sfml-graphics.dir/GLLoader.cpp.o.d"
+  "/Users/dtome-pe/repos/CURSUS/push_swap_github/push_swap_visualizer/build/_deps/sfml-src/src/SFML/Graphics/Glsl.cpp" "_deps/sfml-build/src/SFML/Graphics/CMakeFiles/sfml-graphics.dir/Glsl.cpp.o" "gcc" "_deps/sfml-build/src/SFML/Graphics/CMakeFiles/sfml-graphics.dir/Glsl.cpp.o.d"
+  "/Users/dtome-pe/repos/CURSUS/push_swap_github/push_swap_visualizer/build/_deps/sfml-src/src/SFML/Graphics/Image.cpp" "_deps/sfml-build/src/SFML/Graphics/CMakeFiles/sfml-graphics.dir/Image.cpp.o" "gcc" "_deps/sfml-build/src/SFML/Graphics/CMakeFiles/sfml-graphics.dir/Image.cpp.o.d"
+  "/Users/dtome-pe/repos/CURSUS/push_swap_github/push_swap_visualizer/build/_deps/sfml-src/src/SFML/Graphics/ImageLoader.cpp" "_deps/sfml-build/src/SFML/Graphics/CMakeFiles/sfml-graphics.dir/ImageLoader.cpp.o" "gcc" "_deps/sfml-build/src/SFML/Graphics/CMakeFiles/sfml-graphics.dir/ImageLoader.cpp.o.d"
+  "/Users/dtome-pe/repos/CURSUS/push_swap_github/push_swap_visualizer/build/_deps/sfml-src/src/SFML/Graphics/RectangleShape.cpp" "_deps/sfml-build/src/SFML/Graphics/CMakeFiles/sfml-graphics.dir/RectangleShape.cpp.o" "gcc" "_deps/sfml-build/src/SFML/Graphics/CMakeFiles/sfml-graphics.dir/RectangleShape.cpp.o.d"
+  "/Users/dtome-pe/repos/CURSUS/push_swap_github/push_swap_visualizer/build/_deps/sfml-src/src/SFML/Graphics/RenderStates.cpp" "_deps/sfml-build/src/SFML/Graphics/CMakeFiles/sfml-graphics.dir/RenderStates.cpp.o" "gcc" "_deps/sfml-build/src/SFML/Graphics/CMakeFiles/sfml-graphics.dir/RenderStates.cpp.o.d"
+  "/Users/dtome-pe/repos/CURSUS/push_swap_github/push_swap_visualizer/build/_deps/sfml-src/src/SFML/Graphics/RenderTarget.cpp" "_deps/sfml-build/src/SFML/Graphics/CMakeFiles/sfml-graphics.dir/RenderTarget.cpp.o" "gcc" "_deps/sfml-build/src/SFML/Graphics/CMakeFiles/sfml-graphics.dir/RenderTarget.cpp.o.d"
+  "/Users/dtome-pe/repos/CURSUS/push_swap_github/push_swap_visualizer/build/_deps/sfml-src/src/SFML/Graphics/RenderTexture.cpp" "_deps/sfml-build/src/SFML/Graphics/CMakeFiles/sfml-graphics.dir/RenderTexture.cpp.o" "gcc" "_deps/sfml-build/src/SFML/Graphics/CMakeFiles/sfml-graphics.dir/RenderTexture.cpp.o.d"
+  "/Users/dtome-pe/repos/CURSUS/push_swap_github/push_swap_visualizer/build/_deps/sfml-src/src/SFML/Graphics/RenderTextureImpl.cpp" "_deps/sfml-build/src/SFML/Graphics/CMakeFiles/sfml-graphics.dir/RenderTextureImpl.cpp.o" "gcc" "_deps/sfml-build/src/SFML/Graphics/CMakeFiles/sfml-graphics.dir/RenderTextureImpl.cpp.o.d"
+  "/Users/dtome-pe/repos/CURSUS/push_swap_github/push_swap_visualizer/build/_deps/sfml-src/src/SFML/Graphics/RenderTextureImplDefault.cpp" "_deps/sfml-build/src/SFML/Graphics/CMakeFiles/sfml-graphics.dir/RenderTextureImplDefault.cpp.o" "gcc" "_deps/sfml-build/src/SFML/Graphics/CMakeFiles/sfml-graphics.dir/RenderTextureImplDefault.cpp.o.d"
+  "/Users/dtome-pe/repos/CURSUS/push_swap_github/push_swap_visualizer/build/_deps/sfml-src/src/SFML/Graphics/RenderTextureImplFBO.cpp" "_deps/sfml-build/src/SFML/Graphics/CMakeFiles/sfml-graphics.dir/RenderTextureImplFBO.cpp.o" "gcc" "_deps/sfml-build/src/SFML/Graphics/CMakeFiles/sfml-graphics.dir/RenderTextureImplFBO.cpp.o.d"
+  "/Users/dtome-pe/repos/CURSUS/push_swap_github/push_swap_visualizer/build/_deps/sfml-src/src/SFML/Graphics/RenderWindow.cpp" "_deps/sfml-build/src/SFML/Graphics/CMakeFiles/sfml-graphics.dir/RenderWindow.cpp.o" "gcc" "_deps/sfml-build/src/SFML/Graphics/CMakeFiles/sfml-graphics.dir/RenderWindow.cpp.o.d"
+  "/Users/dtome-pe/repos/CURSUS/push_swap_github/push_swap_visualizer/build/_deps/sfml-src/src/SFML/Graphics/Shader.cpp" "_deps/sfml-build/src/SFML/Graphics/CMakeFiles/sfml-graphics.dir/Shader.cpp.o" "gcc" "_deps/sfml-build/src/SFML/Graphics/CMakeFiles/sfml-graphics.dir/Shader.cpp.o.d"
+  "/Users/dtome-pe/repos/CURSUS/push_swap_github/push_swap_visualizer/build/_deps/sfml-src/src/SFML/Graphics/Shape.cpp" "_deps/sfml-build/src/SFML/Graphics/CMakeFiles/sfml-graphics.dir/Shape.cpp.o" "gcc" "_deps/sfml-build/src/SFML/Graphics/CMakeFiles/sfml-graphics.dir/Shape.cpp.o.d"
+  "/Users/dtome-pe/repos/CURSUS/push_swap_github/push_swap_visualizer/build/_deps/sfml-src/src/SFML/Graphics/Sprite.cpp" "_deps/sfml-build/src/SFML/Graphics/CMakeFiles/sfml-graphics.dir/Sprite.cpp.o" "gcc" "_deps/sfml-build/src/SFML/Graphics/CMakeFiles/sfml-graphics.dir/Sprite.cpp.o.d"
+  "/Users/dtome-pe/repos/CURSUS/push_swap_github/push_swap_visualizer/build/_deps/sfml-src/src/SFML/Graphics/Text.cpp" "_deps/sfml-build/src/SFML/Graphics/CMakeFiles/sfml-graphics.dir/Text.cpp.o" "gcc" "_deps/sfml-build/src/SFML/Graphics/CMakeFiles/sfml-graphics.dir/Text.cpp.o.d"
+  "/Users/dtome-pe/repos/CURSUS/push_swap_github/push_swap_visualizer/build/_deps/sfml-src/src/SFML/Graphics/Texture.cpp" "_deps/sfml-build/src/SFML/Graphics/CMakeFiles/sfml-graphics.dir/Texture.cpp.o" "gcc" "_deps/sfml-build/src/SFML/Graphics/CMakeFiles/sfml-graphics.dir/Texture.cpp.o.d"
+  "/Users/dtome-pe/repos/CURSUS/push_swap_github/push_swap_visualizer/build/_deps/sfml-src/src/SFML/Graphics/TextureSaver.cpp" "_deps/sfml-build/src/SFML/Graphics/CMakeFiles/sfml-graphics.dir/TextureSaver.cpp.o" "gcc" "_deps/sfml-build/src/SFML/Graphics/CMakeFiles/sfml-graphics.dir/TextureSaver.cpp.o.d"
+  "/Users/dtome-pe/repos/CURSUS/push_swap_github/push_swap_visualizer/build/_deps/sfml-src/src/SFML/Graphics/Transform.cpp" "_deps/sfml-build/src/SFML/Graphics/CMakeFiles/sfml-graphics.dir/Transform.cpp.o" "gcc" "_deps/sfml-build/src/SFML/Graphics/CMakeFiles/sfml-graphics.dir/Transform.cpp.o.d"
+  "/Users/dtome-pe/repos/CURSUS/push_swap_github/push_swap_visualizer/build/_deps/sfml-src/src/SFML/Graphics/Transformable.cpp" "_deps/sfml-build/src/SFML/Graphics/CMakeFiles/sfml-graphics.dir/Transformable.cpp.o" "gcc" "_deps/sfml-build/src/SFML/Graphics/CMakeFiles/sfml-graphics.dir/Transformable.cpp.o.d"
+  "/Users/dtome-pe/repos/CURSUS/push_swap_github/push_swap_visualizer/build/_deps/sfml-src/src/SFML/Graphics/Vertex.cpp" "_deps/sfml-build/src/SFML/Graphics/CMakeFiles/sfml-graphics.dir/Vertex.cpp.o" "gcc" "_deps/sfml-build/src/SFML/Graphics/CMakeFiles/sfml-graphics.dir/Vertex.cpp.o.d"
+  "/Users/dtome-pe/repos/CURSUS/push_swap_github/push_swap_visualizer/build/_deps/sfml-src/src/SFML/Graphics/VertexArray.cpp" "_deps/sfml-build/src/SFML/Graphics/CMakeFiles/sfml-graphics.dir/VertexArray.cpp.o" "gcc" "_deps/sfml-build/src/SFML/Graphics/CMakeFiles/sfml-graphics.dir/VertexArray.cpp.o.d"
+  "/Users/dtome-pe/repos/CURSUS/push_swap_github/push_swap_visualizer/build/_deps/sfml-src/src/SFML/Graphics/VertexBuffer.cpp" "_deps/sfml-build/src/SFML/Graphics/CMakeFiles/sfml-graphics.dir/VertexBuffer.cpp.o" "gcc" "_deps/sfml-build/src/SFML/Graphics/CMakeFiles/sfml-graphics.dir/VertexBuffer.cpp.o.d"
+  "/Users/dtome-pe/repos/CURSUS/push_swap_github/push_swap_visualizer/build/_deps/sfml-src/src/SFML/Graphics/View.cpp" "_deps/sfml-build/src/SFML/Graphics/CMakeFiles/sfml-graphics.dir/View.cpp.o" "gcc" "_deps/sfml-build/src/SFML/Graphics/CMakeFiles/sfml-graphics.dir/View.cpp.o.d"
   )
 
 # Pairs of files generated by the same build rule.
 set(CMAKE_MULTIPLE_OUTPUT_PAIRS
-  "/home/diego/repos/push_swap/push_swap_visualizer/build/_deps/sfml-build/lib/libsfml-graphics.so" "/home/diego/repos/push_swap/push_swap_visualizer/build/_deps/sfml-build/lib/libsfml-graphics.so.2.5.1"
-  "/home/diego/repos/push_swap/push_swap_visualizer/build/_deps/sfml-build/lib/libsfml-graphics.so.2.5" "/home/diego/repos/push_swap/push_swap_visualizer/build/_deps/sfml-build/lib/libsfml-graphics.so.2.5.1"
+  "/Users/dtome-pe/repos/CURSUS/push_swap_github/push_swap_visualizer/build/_deps/sfml-build/lib/libsfml-graphics.2.5.dylib" "/Users/dtome-pe/repos/CURSUS/push_swap_github/push_swap_visualizer/build/_deps/sfml-build/lib/libsfml-graphics.2.5.1.dylib"
+  "/Users/dtome-pe/repos/CURSUS/push_swap_github/push_swap_visualizer/build/_deps/sfml-build/lib/libsfml-graphics.dylib" "/Users/dtome-pe/repos/CURSUS/push_swap_github/push_swap_visualizer/build/_deps/sfml-build/lib/libsfml-graphics.2.5.1.dylib"
   )
 
 
-# Targets to which this target links.
-set(CMAKE_TARGET_LINKED_INFO_FILES
-  "/home/diego/repos/push_swap/push_swap_visualizer/build/_deps/sfml-build/src/SFML/Window/CMakeFiles/sfml-window.dir/DependInfo.cmake"
-  "/home/diego/repos/push_swap/push_swap_visualizer/build/_deps/sfml-build/src/SFML/System/CMakeFiles/sfml-system.dir/DependInfo.cmake"
+# Targets to which this target links which contain Fortran sources.
+set(CMAKE_Fortran_TARGET_LINKED_INFO_FILES
   )
 
 # Fortran module output directory.

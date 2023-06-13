@@ -6,7 +6,7 @@
 /*   By: dtome-pe <dtome-pe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/02 09:15:52 by dtome-pe          #+#    #+#             */
-/*   Updated: 2023/06/02 09:25:53 by dtome-pe         ###   ########.fr       */
+/*   Updated: 2023/06/13 17:16:10 by dtome-pe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,6 @@
 # define PUSH_SWAP_H
 
 # include "libft/libft.h"
-
-typedef struct s_stack
-{
-	int	a_p[20];
-	int	b_p[20];
-	int	a_n;
-	int	b_n;
-}				t_stack;
 
 int		check_value_range(int argc, char *argv[]);
 int		check_digits(int argc, char *argv[]);
@@ -55,8 +47,7 @@ int		check_range(int *arr, int range, int n);
 int		find_highest(int *arr, int n);
 int		get_median(t_dlist *list, int n);
 int		*get_array(t_dlist *stack, int n);
-void	first_sort(t_dlist **a, t_dlist **b, int n, t_stack *stack_b);
-void	quicksort_b(t_dlist **a, t_dlist **b, int n, t_stack *stack_a);
+void	first_sort(t_dlist **a, t_dlist **b, int total);
 int		sorted_up_to(t_dlist *a, t_dlist *b);
 int		elements_after_sorted(t_dlist *a, int sorted);
 void	do_3_2_1(t_dlist **a);
@@ -65,10 +56,13 @@ void	do_3_1_2(t_dlist **a);
 void	do_1_3_2(t_dlist **a);
 void	do_2_1_3(t_dlist **a);
 int		ft_dlstsize(t_dlist *lst);
-int		get_partition(t_stack *stack, t_dlist *list);
 void	sort_a(t_dlist **a, int elements);
-int		operate_a(t_dlist **a, t_dlist **b, int n, t_stack *stack);
 int		operate_b(t_dlist **a, t_dlist **b, int n);
 int		get_half_median(t_dlist *list, int n);
+void 	put_order(t_dlist *stack, int n);
+void 	print_order(t_dlist *a);
+int 	get_rev(t_dlist *tail, int total);
+int 	get_rot(t_dlist *head, int total);
+int 	get_divider(int total);
 
 #endif

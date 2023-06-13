@@ -2,37 +2,37 @@
 	"sources" : 
 	[
 		{
-			"file" : "/home/diego/repos/push_swap/push_swap_visualizer/build/_deps/imgui-subbuild/CMakeFiles/imgui-populate"
+			"file" : "/Users/dtome-pe/repos/CURSUS/push_swap_github/push_swap_visualizer/build/_deps/imgui-subbuild/CMakeFiles/imgui-populate"
 		},
 		{
-			"file" : "/home/diego/repos/push_swap/push_swap_visualizer/build/_deps/imgui-subbuild/CMakeFiles/imgui-populate.rule"
+			"file" : "/Users/dtome-pe/repos/CURSUS/push_swap_github/push_swap_visualizer/build/_deps/imgui-subbuild/CMakeFiles/imgui-populate.rule"
 		},
 		{
-			"file" : "/home/diego/repos/push_swap/push_swap_visualizer/build/_deps/imgui-subbuild/CMakeFiles/imgui-populate-complete.rule"
+			"file" : "/Users/dtome-pe/repos/CURSUS/push_swap_github/push_swap_visualizer/build/_deps/imgui-subbuild/CMakeFiles/imgui-populate-complete.rule"
 		},
 		{
-			"file" : "/home/diego/repos/push_swap/push_swap_visualizer/build/_deps/imgui-subbuild/imgui-populate-prefix/src/imgui-populate-stamp/imgui-populate-install.rule"
+			"file" : "/Users/dtome-pe/repos/CURSUS/push_swap_github/push_swap_visualizer/build/_deps/imgui-subbuild/imgui-populate-prefix/src/imgui-populate-stamp/imgui-populate-build.rule"
 		},
 		{
-			"file" : "/home/diego/repos/push_swap/push_swap_visualizer/build/_deps/imgui-subbuild/imgui-populate-prefix/src/imgui-populate-stamp/imgui-populate-mkdir.rule"
+			"file" : "/Users/dtome-pe/repos/CURSUS/push_swap_github/push_swap_visualizer/build/_deps/imgui-subbuild/imgui-populate-prefix/src/imgui-populate-stamp/imgui-populate-configure.rule"
 		},
 		{
-			"file" : "/home/diego/repos/push_swap/push_swap_visualizer/build/_deps/imgui-subbuild/imgui-populate-prefix/src/imgui-populate-stamp/imgui-populate-download.rule"
+			"file" : "/Users/dtome-pe/repos/CURSUS/push_swap_github/push_swap_visualizer/build/_deps/imgui-subbuild/imgui-populate-prefix/src/imgui-populate-stamp/imgui-populate-download.rule"
 		},
 		{
-			"file" : "/home/diego/repos/push_swap/push_swap_visualizer/build/_deps/imgui-subbuild/imgui-populate-prefix/src/imgui-populate-stamp/imgui-populate-update.rule"
+			"file" : "/Users/dtome-pe/repos/CURSUS/push_swap_github/push_swap_visualizer/build/_deps/imgui-subbuild/imgui-populate-prefix/src/imgui-populate-stamp/imgui-populate-install.rule"
 		},
 		{
-			"file" : "/home/diego/repos/push_swap/push_swap_visualizer/build/_deps/imgui-subbuild/imgui-populate-prefix/src/imgui-populate-stamp/imgui-populate-patch.rule"
+			"file" : "/Users/dtome-pe/repos/CURSUS/push_swap_github/push_swap_visualizer/build/_deps/imgui-subbuild/imgui-populate-prefix/src/imgui-populate-stamp/imgui-populate-mkdir.rule"
 		},
 		{
-			"file" : "/home/diego/repos/push_swap/push_swap_visualizer/build/_deps/imgui-subbuild/imgui-populate-prefix/src/imgui-populate-stamp/imgui-populate-configure.rule"
+			"file" : "/Users/dtome-pe/repos/CURSUS/push_swap_github/push_swap_visualizer/build/_deps/imgui-subbuild/imgui-populate-prefix/src/imgui-populate-stamp/imgui-populate-patch.rule"
 		},
 		{
-			"file" : "/home/diego/repos/push_swap/push_swap_visualizer/build/_deps/imgui-subbuild/imgui-populate-prefix/src/imgui-populate-stamp/imgui-populate-build.rule"
+			"file" : "/Users/dtome-pe/repos/CURSUS/push_swap_github/push_swap_visualizer/build/_deps/imgui-subbuild/imgui-populate-prefix/src/imgui-populate-stamp/imgui-populate-test.rule"
 		},
 		{
-			"file" : "/home/diego/repos/push_swap/push_swap_visualizer/build/_deps/imgui-subbuild/imgui-populate-prefix/src/imgui-populate-stamp/imgui-populate-test.rule"
+			"file" : "/Users/dtome-pe/repos/CURSUS/push_swap_github/push_swap_visualizer/build/_deps/imgui-subbuild/imgui-populate-prefix/src/imgui-populate-stamp/imgui-populate-update.rule"
 		}
 	],
 	"target" : 

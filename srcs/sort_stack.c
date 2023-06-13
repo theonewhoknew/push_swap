@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   sort_stack.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: theonewhoknew <theonewhoknew@student.42    +#+  +:+       +#+        */
+/*   By: dtome-pe <dtome-pe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/02 09:32:10 by dtome-pe          #+#    #+#             */
-/*   Updated: 2023/06/02 19:22:59 by theonewhokn      ###   ########.fr       */
+/*   Updated: 2023/06/13 17:17:47 by dtome-pe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,88 +15,81 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-void	aux_first_sort(t_dlist **lst, t_stack *stack)
+void sort_big(t_dlist **a, t_dlist **b, int total)
 {
-	stack->b_n++;
-	stack->b_p[(stack->b_n) - 1] = (*lst)->content;
-}
+	int i;
+	int n;
+	int chunk;
+	int elements_in_chunk;
 
-void	first_sort(t_dlist **a, t_dlist **b, int median, t_stack *stack)
-{	
-	int	i;
-	int	partition_set;
-
-	partition_set = 0;
-	if (ft_dlstsize(*a) <= 3)
-		return ;
+	elements_in_chunk = 0;
 	i = 0;
-	while (i < ft_dlstsize(*a))
+	n = 0;
+	chunk = total / 5;
+	elements_in_chunk = chunk;
+	while (n < 5)
 	{	
-		while (ft_dlstlast(*a)->content <= median)
-			reverse_a(a);
-		if ((*a)->content <= median)
-		{
-			push_b(a, b);
-			if (!partition_set)
+		while(i < elements_in_chunk)
+		{	
+			if ((*a)->order < chunk)
 			{	
-				aux_first_sort(b, stack);
-				partition_set = 1;
+				push_b(a, b);
+				if(((*b)->order < chunk - get_divider(total) && ft_dlstsize(*b) > 1))
+					rotate_b(b);
+				i++;
 			}
-			median = get_half_median(*a, ft_dlstsize(*a));
+			else
+				rotate_a(a);
 		}
-		else if ((*a)->next->content <= median && (*a)->content < ft_dlstlast(*a)->content)
-			swap_a(*a);
-		else
-			rotate_a(a);
-		i++;
+		i = 0;
+		chunk += elements_in_chunk;
+		n++;
 	}
-	first_sort(a, b, get_half_median(*a, ft_dlstsize(*a)), stack);
 }
 
-void	quicksort_a(t_dlist **a, t_dlist **b, int n, t_stack *stack)
+void first_sort(t_dlist **a, t_dlist **b, int total)
 {	
-	int	rotated;
 
-	rotated = operate_a(a, b, n, stack);
-	while (rotated)
-	{
-		reverse_a(a);
-		rotated--;
-	}
-	if (elements_after_sorted(*a, sorted_up_to(*a, *b)) <= 3)
-		sort_a(a, elements_after_sorted(*a, sorted_up_to(*a, *b)));
-	else
-		quicksort_a(a, b, elements_after_sorted(*a, sorted_up_to(*a, *b)),
-			stack);
+	if (total > 99)
+		sort_big(a, b, total);
 }
 
-void	quicksort_b(t_dlist **a, t_dlist **b, int n, t_stack *stack)
-{	
-	int	pushed;
+void second_sort(t_dlist **a, t_dlist **b, int total)
+{
+	t_dlist *head;
+	t_dlist *tail;
+	int rot;
+	int rev;
 
-	pushed = operate_b(a, b, n);
-	if (pushed <= 3)
+	total -= 1;
+	while (total >= 0)
 	{	
-		sort_a(a, elements_after_sorted(*a, sorted_up_to(*a, *b)));
-		stack->a_n = 1;
-		stack->a_p[0] = sorted_up_to(*a, *b);
+		head = *b;
+		tail = ft_dlstlast(*b);
+		rot = get_rot(head, total);
+		rev = get_rev(tail, total);
+		if (rot <= rev)
+		{
+			while ((*b)->order != total)
+				rotate_b(b);
+			push_a(a, b);
+		}
+		else
+		{	
+			while ((*b)->order != total)
+				reverse_b(b);
+			push_a(a, b);
+		}
+		total--;
 	}
-	else if (pushed > 3)
-		quicksort_a(a, b, elements_after_sorted(*a, sorted_up_to(*a, *b)),
-			stack);
 }
 
 void	sort_stack(t_dlist *a, t_dlist *b)
 {	
-	t_stack	stack;
-	int median;
+	int total;
 
-	median = get_half_median(a, ft_dlstsize(a));
-	stack.a_n = 0;
-	stack.b_n = 0;
-	first_sort(&a, &b, median, &stack);
-	sort_a(&a, ft_dlstsize(a));
-	while (is_sorted_both(&a, &b) != 1)
-		quicksort_b(&a, &b, get_partition(&stack, b), &stack);
+	total = ft_dlstsize(a);
+	first_sort(&a, &b, total);
+	second_sort(&a, &b, total);
 	return ;
 }

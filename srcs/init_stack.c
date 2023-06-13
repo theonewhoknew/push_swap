@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   init_stack_a.c                                     :+:      :+:    :+:   */
+/*   init_stack.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dtome-pe <dtome-pe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/02 09:06:51 by dtome-pe          #+#    #+#             */
-/*   Updated: 2023/06/02 09:07:19 by dtome-pe         ###   ########.fr       */
+/*   Updated: 2023/06/13 15:08:21 by dtome-pe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ t_dlist	*init_stack_a(int argc, char *argv[])
 		strs = parse_argv(argv[i]);
 		while (strs[j] != NULL)
 		{
-			ft_dlstadd_back(&head, &tail, ft_dlstnew(ft_atoi(strs[j])));
+			ft_dlstadd_back(&head, &tail, ft_dlstnew(ft_atoi(strs[j]), 0));
 			j++;
 		}
 		j = 0;
@@ -40,4 +40,33 @@ t_dlist	*init_stack_a(int argc, char *argv[])
 		i++;
 	}
 	return (head);
+}
+
+void put_order(t_dlist *stack, int n)
+{
+	int i;
+	t_dlist *iter;
+	t_dlist *curr;
+	int order;
+	int min;
+
+	min = 0;
+	order = 0;
+	curr = stack;
+	iter = stack;
+	i = 0;
+	while (i < n)
+	{
+		while (iter != NULL)
+		{
+			if (iter->content < curr->content)
+				order++;
+			iter = iter->next;
+		}
+		curr->order = order;
+		iter = stack;
+		curr = curr->next;
+		i++;
+		order = 0;
+	}
 }

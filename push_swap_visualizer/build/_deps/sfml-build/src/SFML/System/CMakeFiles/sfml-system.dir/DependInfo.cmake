@@ -1,48 +1,40 @@
+
+# Consider dependencies only in project.
+set(CMAKE_DEPENDS_IN_PROJECT_ONLY OFF)
+
 # The set of languages for which implicit dependencies are needed:
 set(CMAKE_DEPENDS_LANGUAGES
-  "CXX"
-  )
-# The set of files for implicit dependencies of each language:
-set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/diego/repos/push_swap/push_swap_visualizer/build/_deps/sfml-src/src/SFML/System/Clock.cpp" "/home/diego/repos/push_swap/push_swap_visualizer/build/_deps/sfml-build/src/SFML/System/CMakeFiles/sfml-system.dir/Clock.cpp.o"
-  "/home/diego/repos/push_swap/push_swap_visualizer/build/_deps/sfml-src/src/SFML/System/Err.cpp" "/home/diego/repos/push_swap/push_swap_visualizer/build/_deps/sfml-build/src/SFML/System/CMakeFiles/sfml-system.dir/Err.cpp.o"
-  "/home/diego/repos/push_swap/push_swap_visualizer/build/_deps/sfml-src/src/SFML/System/FileInputStream.cpp" "/home/diego/repos/push_swap/push_swap_visualizer/build/_deps/sfml-build/src/SFML/System/CMakeFiles/sfml-system.dir/FileInputStream.cpp.o"
-  "/home/diego/repos/push_swap/push_swap_visualizer/build/_deps/sfml-src/src/SFML/System/Lock.cpp" "/home/diego/repos/push_swap/push_swap_visualizer/build/_deps/sfml-build/src/SFML/System/CMakeFiles/sfml-system.dir/Lock.cpp.o"
-  "/home/diego/repos/push_swap/push_swap_visualizer/build/_deps/sfml-src/src/SFML/System/MemoryInputStream.cpp" "/home/diego/repos/push_swap/push_swap_visualizer/build/_deps/sfml-build/src/SFML/System/CMakeFiles/sfml-system.dir/MemoryInputStream.cpp.o"
-  "/home/diego/repos/push_swap/push_swap_visualizer/build/_deps/sfml-src/src/SFML/System/Mutex.cpp" "/home/diego/repos/push_swap/push_swap_visualizer/build/_deps/sfml-build/src/SFML/System/CMakeFiles/sfml-system.dir/Mutex.cpp.o"
-  "/home/diego/repos/push_swap/push_swap_visualizer/build/_deps/sfml-src/src/SFML/System/Sleep.cpp" "/home/diego/repos/push_swap/push_swap_visualizer/build/_deps/sfml-build/src/SFML/System/CMakeFiles/sfml-system.dir/Sleep.cpp.o"
-  "/home/diego/repos/push_swap/push_swap_visualizer/build/_deps/sfml-src/src/SFML/System/String.cpp" "/home/diego/repos/push_swap/push_swap_visualizer/build/_deps/sfml-build/src/SFML/System/CMakeFiles/sfml-system.dir/String.cpp.o"
-  "/home/diego/repos/push_swap/push_swap_visualizer/build/_deps/sfml-src/src/SFML/System/Thread.cpp" "/home/diego/repos/push_swap/push_swap_visualizer/build/_deps/sfml-build/src/SFML/System/CMakeFiles/sfml-system.dir/Thread.cpp.o"
-  "/home/diego/repos/push_swap/push_swap_visualizer/build/_deps/sfml-src/src/SFML/System/ThreadLocal.cpp" "/home/diego/repos/push_swap/push_swap_visualizer/build/_deps/sfml-build/src/SFML/System/CMakeFiles/sfml-system.dir/ThreadLocal.cpp.o"
-  "/home/diego/repos/push_swap/push_swap_visualizer/build/_deps/sfml-src/src/SFML/System/Time.cpp" "/home/diego/repos/push_swap/push_swap_visualizer/build/_deps/sfml-build/src/SFML/System/CMakeFiles/sfml-system.dir/Time.cpp.o"
-  "/home/diego/repos/push_swap/push_swap_visualizer/build/_deps/sfml-src/src/SFML/System/Unix/ClockImpl.cpp" "/home/diego/repos/push_swap/push_swap_visualizer/build/_deps/sfml-build/src/SFML/System/CMakeFiles/sfml-system.dir/Unix/ClockImpl.cpp.o"
-  "/home/diego/repos/push_swap/push_swap_visualizer/build/_deps/sfml-src/src/SFML/System/Unix/MutexImpl.cpp" "/home/diego/repos/push_swap/push_swap_visualizer/build/_deps/sfml-build/src/SFML/System/CMakeFiles/sfml-system.dir/Unix/MutexImpl.cpp.o"
-  "/home/diego/repos/push_swap/push_swap_visualizer/build/_deps/sfml-src/src/SFML/System/Unix/SleepImpl.cpp" "/home/diego/repos/push_swap/push_swap_visualizer/build/_deps/sfml-build/src/SFML/System/CMakeFiles/sfml-system.dir/Unix/SleepImpl.cpp.o"
-  "/home/diego/repos/push_swap/push_swap_visualizer/build/_deps/sfml-src/src/SFML/System/Unix/ThreadImpl.cpp" "/home/diego/repos/push_swap/push_swap_visualizer/build/_deps/sfml-build/src/SFML/System/CMakeFiles/sfml-system.dir/Unix/ThreadImpl.cpp.o"
-  "/home/diego/repos/push_swap/push_swap_visualizer/build/_deps/sfml-src/src/SFML/System/Unix/ThreadLocalImpl.cpp" "/home/diego/repos/push_swap/push_swap_visualizer/build/_deps/sfml-build/src/SFML/System/CMakeFiles/sfml-system.dir/Unix/ThreadLocalImpl.cpp.o"
-  )
-set(CMAKE_CXX_COMPILER_ID "Clang")
-
-# Preprocessor definitions for this target.
-set(CMAKE_TARGET_DEFINITIONS_CXX
-  "SFML_SYSTEM_EXPORTS"
   )
 
-# The include file search paths:
-set(CMAKE_CXX_TARGET_INCLUDE_PATH
-  "_deps/sfml-src/include"
-  "_deps/sfml-src/src"
+# The set of dependency files which are needed:
+set(CMAKE_DEPENDS_DEPENDENCY_FILES
+  "/Users/dtome-pe/repos/CURSUS/push_swap_github/push_swap_visualizer/build/_deps/sfml-src/src/SFML/System/Clock.cpp" "_deps/sfml-build/src/SFML/System/CMakeFiles/sfml-system.dir/Clock.cpp.o" "gcc" "_deps/sfml-build/src/SFML/System/CMakeFiles/sfml-system.dir/Clock.cpp.o.d"
+  "/Users/dtome-pe/repos/CURSUS/push_swap_github/push_swap_visualizer/build/_deps/sfml-src/src/SFML/System/Err.cpp" "_deps/sfml-build/src/SFML/System/CMakeFiles/sfml-system.dir/Err.cpp.o" "gcc" "_deps/sfml-build/src/SFML/System/CMakeFiles/sfml-system.dir/Err.cpp.o.d"
+  "/Users/dtome-pe/repos/CURSUS/push_swap_github/push_swap_visualizer/build/_deps/sfml-src/src/SFML/System/FileInputStream.cpp" "_deps/sfml-build/src/SFML/System/CMakeFiles/sfml-system.dir/FileInputStream.cpp.o" "gcc" "_deps/sfml-build/src/SFML/System/CMakeFiles/sfml-system.dir/FileInputStream.cpp.o.d"
+  "/Users/dtome-pe/repos/CURSUS/push_swap_github/push_swap_visualizer/build/_deps/sfml-src/src/SFML/System/Lock.cpp" "_deps/sfml-build/src/SFML/System/CMakeFiles/sfml-system.dir/Lock.cpp.o" "gcc" "_deps/sfml-build/src/SFML/System/CMakeFiles/sfml-system.dir/Lock.cpp.o.d"
+  "/Users/dtome-pe/repos/CURSUS/push_swap_github/push_swap_visualizer/build/_deps/sfml-src/src/SFML/System/MemoryInputStream.cpp" "_deps/sfml-build/src/SFML/System/CMakeFiles/sfml-system.dir/MemoryInputStream.cpp.o" "gcc" "_deps/sfml-build/src/SFML/System/CMakeFiles/sfml-system.dir/MemoryInputStream.cpp.o.d"
+  "/Users/dtome-pe/repos/CURSUS/push_swap_github/push_swap_visualizer/build/_deps/sfml-src/src/SFML/System/Mutex.cpp" "_deps/sfml-build/src/SFML/System/CMakeFiles/sfml-system.dir/Mutex.cpp.o" "gcc" "_deps/sfml-build/src/SFML/System/CMakeFiles/sfml-system.dir/Mutex.cpp.o.d"
+  "/Users/dtome-pe/repos/CURSUS/push_swap_github/push_swap_visualizer/build/_deps/sfml-src/src/SFML/System/Sleep.cpp" "_deps/sfml-build/src/SFML/System/CMakeFiles/sfml-system.dir/Sleep.cpp.o" "gcc" "_deps/sfml-build/src/SFML/System/CMakeFiles/sfml-system.dir/Sleep.cpp.o.d"
+  "/Users/dtome-pe/repos/CURSUS/push_swap_github/push_swap_visualizer/build/_deps/sfml-src/src/SFML/System/String.cpp" "_deps/sfml-build/src/SFML/System/CMakeFiles/sfml-system.dir/String.cpp.o" "gcc" "_deps/sfml-build/src/SFML/System/CMakeFiles/sfml-system.dir/String.cpp.o.d"
+  "/Users/dtome-pe/repos/CURSUS/push_swap_github/push_swap_visualizer/build/_deps/sfml-src/src/SFML/System/Thread.cpp" "_deps/sfml-build/src/SFML/System/CMakeFiles/sfml-system.dir/Thread.cpp.o" "gcc" "_deps/sfml-build/src/SFML/System/CMakeFiles/sfml-system.dir/Thread.cpp.o.d"
+  "/Users/dtome-pe/repos/CURSUS/push_swap_github/push_swap_visualizer/build/_deps/sfml-src/src/SFML/System/ThreadLocal.cpp" "_deps/sfml-build/src/SFML/System/CMakeFiles/sfml-system.dir/ThreadLocal.cpp.o" "gcc" "_deps/sfml-build/src/SFML/System/CMakeFiles/sfml-system.dir/ThreadLocal.cpp.o.d"
+  "/Users/dtome-pe/repos/CURSUS/push_swap_github/push_swap_visualizer/build/_deps/sfml-src/src/SFML/System/Time.cpp" "_deps/sfml-build/src/SFML/System/CMakeFiles/sfml-system.dir/Time.cpp.o" "gcc" "_deps/sfml-build/src/SFML/System/CMakeFiles/sfml-system.dir/Time.cpp.o.d"
+  "/Users/dtome-pe/repos/CURSUS/push_swap_github/push_swap_visualizer/build/_deps/sfml-src/src/SFML/System/Unix/ClockImpl.cpp" "_deps/sfml-build/src/SFML/System/CMakeFiles/sfml-system.dir/Unix/ClockImpl.cpp.o" "gcc" "_deps/sfml-build/src/SFML/System/CMakeFiles/sfml-system.dir/Unix/ClockImpl.cpp.o.d"
+  "/Users/dtome-pe/repos/CURSUS/push_swap_github/push_swap_visualizer/build/_deps/sfml-src/src/SFML/System/Unix/MutexImpl.cpp" "_deps/sfml-build/src/SFML/System/CMakeFiles/sfml-system.dir/Unix/MutexImpl.cpp.o" "gcc" "_deps/sfml-build/src/SFML/System/CMakeFiles/sfml-system.dir/Unix/MutexImpl.cpp.o.d"
+  "/Users/dtome-pe/repos/CURSUS/push_swap_github/push_swap_visualizer/build/_deps/sfml-src/src/SFML/System/Unix/SleepImpl.cpp" "_deps/sfml-build/src/SFML/System/CMakeFiles/sfml-system.dir/Unix/SleepImpl.cpp.o" "gcc" "_deps/sfml-build/src/SFML/System/CMakeFiles/sfml-system.dir/Unix/SleepImpl.cpp.o.d"
+  "/Users/dtome-pe/repos/CURSUS/push_swap_github/push_swap_visualizer/build/_deps/sfml-src/src/SFML/System/Unix/ThreadImpl.cpp" "_deps/sfml-build/src/SFML/System/CMakeFiles/sfml-system.dir/Unix/ThreadImpl.cpp.o" "gcc" "_deps/sfml-build/src/SFML/System/CMakeFiles/sfml-system.dir/Unix/ThreadImpl.cpp.o.d"
+  "/Users/dtome-pe/repos/CURSUS/push_swap_github/push_swap_visualizer/build/_deps/sfml-src/src/SFML/System/Unix/ThreadLocalImpl.cpp" "_deps/sfml-build/src/SFML/System/CMakeFiles/sfml-system.dir/Unix/ThreadLocalImpl.cpp.o" "gcc" "_deps/sfml-build/src/SFML/System/CMakeFiles/sfml-system.dir/Unix/ThreadLocalImpl.cpp.o.d"
   )
 
 # Pairs of files generated by the same build rule.
 set(CMAKE_MULTIPLE_OUTPUT_PAIRS
-  "/home/diego/repos/push_swap/push_swap_visualizer/build/_deps/sfml-build/lib/libsfml-system.so" "/home/diego/repos/push_swap/push_swap_visualizer/build/_deps/sfml-build/lib/libsfml-system.so.2.5.1"
-  "/home/diego/repos/push_swap/push_swap_visualizer/build/_deps/sfml-build/lib/libsfml-system.so.2.5" "/home/diego/repos/push_swap/push_swap_visualizer/build/_deps/sfml-build/lib/libsfml-system.so.2.5.1"
+  "/Users/dtome-pe/repos/CURSUS/push_swap_github/push_swap_visualizer/build/_deps/sfml-build/lib/libsfml-system.2.5.dylib" "/Users/dtome-pe/repos/CURSUS/push_swap_github/push_swap_visualizer/build/_deps/sfml-build/lib/libsfml-system.2.5.1.dylib"
+  "/Users/dtome-pe/repos/CURSUS/push_swap_github/push_swap_visualizer/build/_deps/sfml-build/lib/libsfml-system.dylib" "/Users/dtome-pe/repos/CURSUS/push_swap_github/push_swap_visualizer/build/_deps/sfml-build/lib/libsfml-system.2.5.1.dylib"
   )
 
 
-# Targets to which this target links.
-set(CMAKE_TARGET_LINKED_INFO_FILES
+# Targets to which this target links which contain Fortran sources.
+set(CMAKE_Fortran_TARGET_LINKED_INFO_FILES
   )
 
 # Fortran module output directory.

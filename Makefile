@@ -7,7 +7,7 @@ LIBFT =  $(LIBFT_DIR)/libft.a
 OBJECTS_DIR = objs
 	
 SRCS = $(addprefix srcs/, aux_array.c aux_prints.c check_argv.c create_array.c ft_dlstsize.c get_partition.c init_stack.c is_sorted.c median.c operate.c main.c push.c reverse.c rotate.c \
-		sort_a.c sort_comb.c sort_stack.c sorted_up_to.c swap.c )
+		sort_a.c sort_stack.c sorted_up_to.c swap.c aux_sort.c)
 
 OBJS = $(patsubst srcs/%.c,$(OBJECTS_DIR)/%.o, $(SRCS))
 
