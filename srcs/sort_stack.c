@@ -6,7 +6,7 @@
 /*   By: dtome-pe <dtome-pe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/02 09:32:10 by dtome-pe          #+#    #+#             */
-/*   Updated: 2023/06/13 17:17:47 by dtome-pe         ###   ########.fr       */
+/*   Updated: 2023/06/13 20:39:02 by dtome-pe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 #include "push_swap.h"
 #include <stdio.h>
 #include <stdlib.h>
+
+//static int	check;
 
 void sort_big(t_dlist **a, t_dlist **b, int total)
 {
@@ -54,6 +56,39 @@ void first_sort(t_dlist **a, t_dlist **b, int total)
 		sort_big(a, b, total);
 }
 
+void go_rot(t_dlist **a, t_dlist **b, int rot)
+{
+	int i;
+
+	i = 0;
+	ft_printf("entra en rot\n");
+	while (i < rot)
+	{
+		/* char ch;
+		if (check == 1)
+			scanf("%c", &ch); */
+		rotate_b(b);
+		i++;
+	}
+	push_a(a, b);
+}
+
+void go_rev(t_dlist **a, t_dlist **b, int rev)
+{
+	int i;
+
+	i = 0;
+	while (i <= rev)
+	{	
+		/* char ch;
+		if (check == 1)
+			scanf("%c", &ch); */
+		reverse_b(b);
+		i++;
+	}
+	push_a(a, b);
+}
+
 void second_sort(t_dlist **a, t_dlist **b, int total)
 {
 	t_dlist *head;
@@ -64,22 +99,23 @@ void second_sort(t_dlist **a, t_dlist **b, int total)
 	total -= 1;
 	while (total >= 0)
 	{	
+		/* char ch; */
+		ft_printf("total is %d\n", total);
+		/* if (total == 13)
+		{	
+			print_lists(*a, *b);
+			scanf("%c", &ch);
+			check = 1;
+		} */
 		head = *b;
 		tail = ft_dlstlast(*b);
 		rot = get_rot(head, total);
+		ft_printf("rot is %d\n", rot);
 		rev = get_rev(tail, total);
 		if (rot <= rev)
-		{
-			while ((*b)->order != total)
-				rotate_b(b);
-			push_a(a, b);
-		}
-		else
-		{	
-			while ((*b)->order != total)
-				reverse_b(b);
-			push_a(a, b);
-		}
+			go_rot(a, b, rot);
+		else 
+			go_rev(a, b, rev);
 		total--;
 	}
 }

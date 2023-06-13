@@ -6,7 +6,7 @@
 /*   By: dtome-pe <dtome-pe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/02 09:15:26 by dtome-pe          #+#    #+#             */
-/*   Updated: 2023/06/13 15:13:12 by dtome-pe         ###   ########.fr       */
+/*   Updated: 2023/06/13 20:34:20 by dtome-pe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,5 +27,6 @@ int	main(int argc, char *argv[])
 	put_order(a, ft_dlstsize(a));
 	print_order(a);
 	sort_stack(a, b);
+	ft_printf("returned\n");
 	return (0);
 }

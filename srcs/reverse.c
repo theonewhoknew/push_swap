@@ -6,13 +6,14 @@
 /*   By: dtome-pe <dtome-pe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/02 09:28:32 by dtome-pe          #+#    #+#             */
-/*   Updated: 2023/06/13 15:05:49 by dtome-pe         ###   ########.fr       */
+/*   Updated: 2023/06/13 20:25:14 by dtome-pe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft/libft.h"
 #include "push_swap.h"
 #include <stdlib.h>
+#include <unistd.h>
 
 void	reverse_a(t_dlist **a)
 {	
@@ -42,6 +43,7 @@ void	reverse_b(t_dlist **b)
 		next = tail->prev;
 		next->next = NULL;
 		free (tail);
+		tail = NULL;
 	}
 	ft_putstr_fd("rrb\n", 1);
 }

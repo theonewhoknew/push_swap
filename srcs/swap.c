@@ -6,11 +6,11 @@
 /*   By: dtome-pe <dtome-pe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/02 09:52:36 by dtome-pe          #+#    #+#             */
-/*   Updated: 2023/06/02 09:53:29 by dtome-pe         ###   ########.fr       */
+/*   Updated: 2023/06/13 20:18:45 by dtome-pe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft/libft.h"
+#include "../libft/libft.h"
 #include "push_swap.h"
 #include <stdio.h>
 
@@ -24,6 +24,9 @@ void	swap_a(t_dlist *a)
 		temp = a->content;
 		a->content = a->next->content;
 		a->next->content = temp;
+		temp = a->order;
+		a->order = a->next->order;
+		a->next->order = temp;
 	}
 	ft_putstr_fd("sa\n", 1);
 }
@@ -38,6 +41,9 @@ void	swap_b(t_dlist *b)
 		temp = b->content;
 		b->content = b->next->content;
 		b->next->content = temp;
+		temp = b->order;
+		b->order = b->next->order;
+		b->next->order = temp;
 	}
 	ft_putstr_fd("sb\n", 1);
 }
