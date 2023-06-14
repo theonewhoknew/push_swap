@@ -5,32 +5,36 @@ int get_divider(int total)
 	return ((total / 5) / 2);
 }
 
-int get_rot(t_dlist *head, int total)
+int get_rot(t_dlist *b, int total)
 {	
+	t_dlist *curr;
 	int rot;
 
+	curr = b;
 	rot = 0;
-	while (head != NULL)
+	while (curr != NULL)
 	{	
-		if (head->order == total)
+		if (curr->order == total)
 			break ;
 		rot++;
-		head = head->next;
+		curr = curr->next;
 	}
 	return (rot);
 }
 
-int get_rev(t_dlist *tail, int total)
+int get_rev(t_dlist *b, int total)
 {	
+	t_dlist *curr;
 	int rev;
 
+	curr = b;
 	rev = 0;
-	while (tail != NULL)
+	while (curr != NULL)
 	{	
-		if (tail->order == total)
+		if (curr->order == total)
 			break ;
 		rev++;
-		tail = tail->prev;
+		curr = curr->prev;
 	}
 	return (rev);
 }

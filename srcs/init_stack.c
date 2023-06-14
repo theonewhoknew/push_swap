@@ -48,10 +48,8 @@ void put_order(t_dlist *stack, int n)
 	t_dlist *iter;
 	t_dlist *curr;
 	int order;
-	int min;
 
-	min = 0;
-	order = 0;
+	order = 1;
 	curr = stack;
 	iter = stack;
 	i = 0;
@@ -67,6 +65,6 @@ void put_order(t_dlist *stack, int n)
 		iter = stack;
 		curr = curr->next;
 		i++;
-		order = 0;
+		order = 1;
 	}
 }

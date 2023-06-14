@@ -11,7 +11,7 @@ SRCS = $(addprefix srcs/, aux_array.c aux_prints.c aux_sort.c check_argv.c creat
 
 OBJS = $(patsubst srcs/%.c,$(OBJECTS_DIR)/%.o, $(SRCS))
 
-CFLAGS = -Wall -Werror -Wextra -I . 
+CFLAGS =  -I . 
 
 all: make_libft $(NAME) 
 

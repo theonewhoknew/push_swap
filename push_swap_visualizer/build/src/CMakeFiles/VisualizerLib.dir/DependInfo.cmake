@@ -1,21 +1,35 @@
-
-# Consider dependencies only in project.
-set(CMAKE_DEPENDS_IN_PROJECT_ONLY OFF)
-
 # The set of languages for which implicit dependencies are needed:
 set(CMAKE_DEPENDS_LANGUAGES
+  "CXX"
+  )
+# The set of files for implicit dependencies of each language:
+set(CMAKE_DEPENDS_CHECK_CXX
+  "/home/diego/repos/push_swap/push_swap_visualizer/src/gui.cpp" "/home/diego/repos/push_swap/push_swap_visualizer/build/src/CMakeFiles/VisualizerLib.dir/gui.cpp.o"
+  "/home/diego/repos/push_swap/push_swap_visualizer/src/pushswap.cpp" "/home/diego/repos/push_swap/push_swap_visualizer/build/src/CMakeFiles/VisualizerLib.dir/pushswap.cpp.o"
+  "/home/diego/repos/push_swap/push_swap_visualizer/src/queues.cpp" "/home/diego/repos/push_swap/push_swap_visualizer/build/src/CMakeFiles/VisualizerLib.dir/queues.cpp.o"
+  "/home/diego/repos/push_swap/push_swap_visualizer/src/utils.cpp" "/home/diego/repos/push_swap/push_swap_visualizer/build/src/CMakeFiles/VisualizerLib.dir/utils.cpp.o"
+  )
+set(CMAKE_CXX_COMPILER_ID "Clang")
+
+# Preprocessor definitions for this target.
+set(CMAKE_TARGET_DEFINITIONS_CXX
+  "IMGUI_USER_CONFIG=\"imconfig-SFML.h\""
   )
 
-# The set of dependency files which are needed:
-set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/Users/dtome-pe/repos/CURSUS/push_swap_github/push_swap_visualizer/src/gui.cpp" "src/CMakeFiles/VisualizerLib.dir/gui.cpp.o" "gcc" "src/CMakeFiles/VisualizerLib.dir/gui.cpp.o.d"
-  "/Users/dtome-pe/repos/CURSUS/push_swap_github/push_swap_visualizer/src/pushswap.cpp" "src/CMakeFiles/VisualizerLib.dir/pushswap.cpp.o" "gcc" "src/CMakeFiles/VisualizerLib.dir/pushswap.cpp.o.d"
-  "/Users/dtome-pe/repos/CURSUS/push_swap_github/push_swap_visualizer/src/queues.cpp" "src/CMakeFiles/VisualizerLib.dir/queues.cpp.o" "gcc" "src/CMakeFiles/VisualizerLib.dir/queues.cpp.o.d"
-  "/Users/dtome-pe/repos/CURSUS/push_swap_github/push_swap_visualizer/src/utils.cpp" "src/CMakeFiles/VisualizerLib.dir/utils.cpp.o" "gcc" "src/CMakeFiles/VisualizerLib.dir/utils.cpp.o.d"
+# The include file search paths:
+set(CMAKE_CXX_TARGET_INCLUDE_PATH
+  "../src/../include"
+  "_deps/imgui-src"
+  "_deps/imgui-sfml-src"
+  "_deps/sfml-src/include"
   )
 
-# Targets to which this target links which contain Fortran sources.
-set(CMAKE_Fortran_TARGET_LINKED_INFO_FILES
+# Targets to which this target links.
+set(CMAKE_TARGET_LINKED_INFO_FILES
+  "/home/diego/repos/push_swap/push_swap_visualizer/build/_deps/imgui-sfml-build/CMakeFiles/ImGui-SFML.dir/DependInfo.cmake"
+  "/home/diego/repos/push_swap/push_swap_visualizer/build/_deps/sfml-build/src/SFML/Graphics/CMakeFiles/sfml-graphics.dir/DependInfo.cmake"
+  "/home/diego/repos/push_swap/push_swap_visualizer/build/_deps/sfml-build/src/SFML/Window/CMakeFiles/sfml-window.dir/DependInfo.cmake"
+  "/home/diego/repos/push_swap/push_swap_visualizer/build/_deps/sfml-build/src/SFML/System/CMakeFiles/sfml-system.dir/DependInfo.cmake"
   )
 
 # Fortran module output directory.

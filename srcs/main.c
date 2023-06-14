@@ -25,7 +25,6 @@ int	main(int argc, char *argv[])
 		return (1);
 	a = init_stack_a(argc, argv);
 	put_order(a, ft_dlstsize(a));
-	print_order(a);
 	sort_stack(a, b);
 	ft_printf("returned\n");
 	return (0);

@@ -41,7 +41,8 @@ void	reverse_b(t_dlist **b)
 		tail = ft_dlstlast(*b);
 		ft_dlstadd_front(b, ft_dlstnew(tail->content, tail->order));
 		next = tail->prev;
-		next->next = NULL;
+		if (next != NULL)
+			next->next = NULL;
 		free (tail);
 		tail = NULL;
 	}
